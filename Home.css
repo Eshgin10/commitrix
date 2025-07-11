@@ -1730,11 +1730,13 @@ header.scrolled {
     .cta-text h2 {
         font-size: 1.8rem;
         max-width: 100%;
+        text-align: left;
     }
 
     .cta-text p {
         font-size: 1rem;
-        max-width: 100%;
+                text-align: left;
+        max-width: 300px;
     }
 
     .cta-button {
@@ -1748,6 +1750,9 @@ header.scrolled {
         width: 100%;
         max-width: 200px;
         height: 150px;
+    }
+        #matrix-phone{
+        width: 100%;
     }
 }
 
