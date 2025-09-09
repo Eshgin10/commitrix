@@ -2335,6 +2335,9 @@ header.scrolled {
     .close-menu {
         font-size: 1.8rem;
     }
+    .cta-text{
+        text-align: left;
+    }
 }
 
 @media (max-width: 375px) {
