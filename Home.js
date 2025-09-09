@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentActiveLink = null;
     let isMobileMenuOpen = false;
-    let isUserNavigatingToHash = false;
+    let isUserNavigatingToHash = false; 
     let scrollEndTimer = null;
 
-    // updated code to fix burger menu issue
+    // updated code in order to fix burger menu issue
     function closeMobileMenu() {
         if (mobileMenuPanel) {
             mobileMenuPanel.classList.remove('active');
