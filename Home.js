@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentActiveLink = null;
     let isMobileMenuOpen = false;
+    let isUserNavigatingToHash = false;
+    let scrollEndTimer = null;
 
     // updated code to fix burger menu issue
     function closeMobileMenu() {
@@ -193,6 +195,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const sectionId = href.substring(1);
                 const section = document.getElementById(sectionId);
 
+                // Suppress observer updates during programmatic smooth scroll
+                isUserNavigatingToHash = true;
+
                 if (section) smoothScrollTo(section);
                 else if (href === '#home') smoothScrollTo(0);
 
@@ -317,6 +322,16 @@ allNavLinks.forEach(link => {
         if (header) {
             header.classList.toggle('scrolled', window.scrollY > 50);
         }
+        if (isUserNavigatingToHash) {
+            if (scrollEndTimer) clearTimeout(scrollEndTimer);
+            scrollEndTimer = setTimeout(() => {
+                isUserNavigatingToHash = false;
+                // After scroll settles, ensure indicator stays on the selected link
+                if (currentActiveLink && !currentActiveLink.getAttribute('href').endsWith('.html')) {
+                    updateIndicator(currentActiveLink, true);
+                }
+            }, 200);
+        }
     }, { passive: true });
 
     // Intersection Observer for Active Section Highlighting on Scroll
@@ -339,6 +354,9 @@ allNavLinks.forEach(link => {
 
     if (sectionsToObserve.length > 0) {
         const observer = new IntersectionObserver((entries) => {
+            if (isUserNavigatingToHash) {
+                return; // Ignore section-based updates during programmatic navigation
+            }
             let mostVisibleEntry = null;
             let maxRatio = 0;
             // Special handling for top of page (Home section)
