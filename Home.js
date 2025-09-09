@@ -14,6 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentActiveLink = null;
     let isMobileMenuOpen = false;
 
+    function closeMobileMenu() {
+        if (mobileMenuPanel) {
+            mobileMenuPanel.classList.remove('active');
+        }
+        if (burgerMenu) {
+            burgerMenu.setAttribute('aria-expanded', 'false');
+            burgerMenu.classList.remove('active');
+            burgerMenu.classList.remove('is-x');
+        }
+        document.body.style.overflow = '';
+        isMobileMenuOpen = false;
+        if (burgerIcon) {
+            burgerIcon.innerHTML = '☰';
+        }
+    }
+
     function updateIndicator(link, isInstant = false) {
         if (!navIndicator || !navLinksContainer || !link || !link.closest('.nav-links')) {
             if (navIndicator) navIndicator.style.opacity = '0';
@@ -252,13 +268,7 @@ allNavLinks.forEach(link => {
     if (burgerMenu && mobileMenuPanel) {
         burgerMenu.addEventListener('click', () => {
             if (isMobileMenuOpen) {
-                mobileMenuPanel.classList.remove('active');
-                burgerMenu.setAttribute('aria-expanded', 'false');
-                burgerMenu.classList.remove('active');
-                burgerMenu.classList.remove('is-x');
-                document.body.style.overflow = '';
-                isMobileMenuOpen = false;
-                burgerIcon.innerHTML = '☰';
+                closeMobileMenu();
             } else {
                 mobileMenuPanel.classList.add('active');
                 burgerMenu.setAttribute('aria-expanded', 'true');
@@ -272,23 +282,14 @@ allNavLinks.forEach(link => {
     }
     if (closeMenu && mobileMenuPanel) {
         closeMenu.addEventListener('click', () => {
-            mobileMenuPanel.classList.remove('active');
-            burgerMenu.setAttribute('aria-expanded', 'false');
-            burgerMenu.classList.remove('active');
-            burgerMenu.classList.remove('is-x');
-            document.body.style.overflow = '';
-            isMobileMenuOpen = false;
+            closeMobileMenu();
         });
     }
 
     mobileLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
-            if (mobileMenuPanel) {
-                mobileMenuPanel.classList.remove('active');
-                burgerMenu.setAttribute('aria-expanded', 'false');
-                isMobileMenuOpen = false;
-            }
+            closeMobileMenu();
 
             if (href && href.startsWith('#')) {
                 e.preventDefault();

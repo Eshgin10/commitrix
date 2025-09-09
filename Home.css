@@ -146,6 +146,16 @@ header.scrolled {
     /* Text color on active (over indicator) */
 }
 
+/* When hovering over the navbar, dim all links to white and only the hovered one becomes black */
+.nav-links:hover a {
+    color: var(--text-color);
+}
+
+/* Ensure the hovered link stays black during group hover */
+.nav-links:hover a:hover {
+    color: var(--btn-text);
+}
+
 
 .nav-cta a {
     text-decoration: none;
