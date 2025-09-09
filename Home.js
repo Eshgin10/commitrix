@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentActiveLink = null;
     let isMobileMenuOpen = false;
 
+    // updated code to fix burger menu issue
     function closeMobileMenu() {
         if (mobileMenuPanel) {
             mobileMenuPanel.classList.remove('active');
