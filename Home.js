@@ -368,7 +368,6 @@ allNavLinks.forEach(link => {
                 return; // Don't process other entries if home is determined by scroll position
             }
 
-
             entries.forEach(entry => {
                 if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
                     mostVisibleEntry = entry;
