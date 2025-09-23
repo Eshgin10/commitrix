@@ -629,6 +629,16 @@ header.scrolled {
     border-radius: 20px;
 }
 
+.pricing-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .price-box {
     display: flex;
     align-items: center;
@@ -689,8 +699,56 @@ header.scrolled {
     font-size: 24px;
     font-weight: bold;
     margin: 0;
-    text-transform: uppercase;
+    text-transform: lowercase;
     color: var(--text-color);
+}
+
+.title-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: brightness(0.9);
+    transition: all 0.3s ease;
+}
+
+.title-icon:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+.price-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 8px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.plan-features {
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+.feature-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.feature-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent-color);
+    cursor: not-allowed;
+}
+
+.feature-checkbox label {
+    font-size: 14px;
+    color: var(--text-muted);
+    cursor: not-allowed;
+    font-weight: 400;
 }
 
 .features-container {
@@ -994,7 +1052,7 @@ header.scrolled {
     border-radius: 20px;
     padding: 35px 30px;
     width: 100%;
-    max-width: 300px;
+    max-width: 500px;
     text-align: left;
     transition: all 0.3s ease;
     display: flex;
@@ -1002,19 +1060,36 @@ header.scrolled {
     min-height: 520px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     position: relative;
+    flex: 1;
+    justify-content: space-between;
 }
 
-.pricing-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-    border-color: rgba(132, 255, 0, 0.3);
+/* Removed hover effects */
+
+.pricing-card.featured {
+    background: linear-gradient(135deg, rgba(132, 255, 0, 0.04), rgba(102, 204, 0, 0.02));
+    border: 1px solid rgba(132, 255, 0, 0.15);
+    box-shadow: 0 0 8px rgba(132, 255, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card.featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(132, 255, 0, 0.05) 0%, rgba(132, 255, 0, 0.02) 50%, transparent 100%);
+    pointer-events: none;
 }
 
 .plan-name {
     font-size: 1.8rem;
     color: var(--text-color);
     margin-bottom: 20px;
-    text-transform: uppercase;
+    text-transform: lowercase;
     letter-spacing: 1px;
     font-weight: 600;
 }
@@ -1213,12 +1288,45 @@ header.scrolled {
     /* Focus ring */
 }
 
+.cta-container {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
 .pricing-card .action-btn {
-    margin-top: 25px;
-    /* Space above button */
+    margin-top: 0;
     width: 100%;
-    /* Make button full width of card padding */
     padding: 12px 20px;
+}
+
+.plan-description {
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+.plan-description p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+    margin: 0;
+}
+
+.price-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.price-image img {
+    border-radius: 8px;
+    filter: brightness(0.9);
+    transition: all 0.3s ease;
+}
+
+.price-image img:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
 }
 
 /* Story Section */
@@ -2057,12 +2165,13 @@ header.scrolled {
     .pricing-cards {
         flex-direction: column;
         align-items: center;
+        gap: 20px;
     }
 
     .pricing-card {
         width: 100%;
         max-width: 450px;
-        margin-bottom: 30px;
+        margin-bottom: 0;
     }
 
     .recommended {
