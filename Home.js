@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Loading Screen ---
+    const loadingScreen = document.getElementById('loadingScreen');
+    
+    // Hide loading screen after 3.1 seconds
+    setTimeout(() => {
+        if (loadingScreen) {
+            loadingScreen.classList.add('fade-out');
+            // Remove from DOM after animation completes
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 800);
+        }
+    }, 3000);
+
     // --- Navigation Setup ---
     const navLinks = document.querySelectorAll('.nav-links a:not([href$="Login.html"]):not([href$="FAQ.html"])'); // Exclude external links for indicator
     const allNavLinks = document.querySelectorAll('.nav-links a'); // For general purposes

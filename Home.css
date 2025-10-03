@@ -38,6 +38,82 @@ body {
     /* Prevent horizontal scroll from animations */
 }
 
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+}
+
+.loading-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-content {
+    text-align: center;
+    animation: fadeInScale 1s ease-out;
+}
+
+.loading-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    color: var(--accent-color);
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(132, 255, 0, 0.5);
+    animation: titleGlow 2s ease-in-out 1 forwards;
+}
+
+.loading-subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: #ffffff;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: subtitleFadeIn 0.8s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes titleGlow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(132, 255, 0, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(132, 255, 0, 0.8), 0 0 60px rgba(132, 255, 0, 0.4);
+    }
+}
+
+@keyframes subtitleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+}
+
 HTML {
     scroll-behavior: smooth;
 }
