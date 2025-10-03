@@ -603,54 +603,7 @@ document.addEventListener('DOMContentLoaded', function() {
     footerObserver.observe(footer);
   }
 
-  // Enhanced email interaction
-  if (emailWrapper && emailLink) {
-    emailWrapper.addEventListener('mouseenter', function() {
-      // Add ripple effect
-      const ripple = document.createElement('div');
-      ripple.className = 'ripple-effect';
-      ripple.style.cssText = `
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: radial-gradient(circle, rgba(124, 255, 79, 0.3) 0%, transparent 70%);
-        border-radius: 50px;
-        animation: ripple 0.6s ease-out;
-        pointer-events: none;
-      `;
-      
-      this.style.position = 'relative';
-      this.appendChild(ripple);
-      
-      setTimeout(() => {
-        if (ripple.parentNode) {
-          ripple.parentNode.removeChild(ripple);
-        }
-      }, 600);
-    });
 
-    // Email click tracking (optional)
-    emailLink.addEventListener('click', function(e) {
-      // Add click animation
-      this.style.transform = 'scale(0.98)';
-      setTimeout(() => {
-        this.style.transform = 'scale(1)';
-      }, 150);
-    });
-  }
-
-  // Brand text hover effect
-  if (brandText) {
-    brandText.addEventListener('mouseenter', function() {
-      this.style.transform = 'scale(1.02)';
-    });
-
-    brandText.addEventListener('mouseleave', function() {
-      this.style.transform = 'scale(1)';
-    });
-  }
 
   // Parallax effect for footer background
   window.addEventListener('scroll', function() {
@@ -779,7 +732,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', adjustGrid);
 });
 
-// CTA Section JavaScript
+    // CTA Section JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     const ctaButton = document.querySelector('.cta-button');
 
@@ -791,4 +744,19 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('CTA button clicked - redirect to calendar booking');
         });
     }
+});
+
+// Prevent pricing feature checkboxes from being unchecked
+document.addEventListener('DOMContentLoaded', function() {
+    const planFeatures = document.querySelectorAll('.plan-features .feature-checkbox input[type="checkbox"]');
+    
+    planFeatures.forEach(checkbox => {
+        checkbox.addEventListener('click', function(e) {
+            // Prevent unchecking - always keep it checked
+            if (!this.checked) {
+                e.preventDefault();
+                this.checked = true;
+            }
+        });
+    });
 });

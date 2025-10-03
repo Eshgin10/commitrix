@@ -728,27 +728,7 @@ header.scrolled {
 .plan-features {
     margin: 20px 0;
     padding: 0 10px;
-}
-
-.feature-checkbox {
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-}
-
-.feature-checkbox input[type="checkbox"] {
-    margin-right: 10px;
-    width: 16px;
-    height: 16px;
-    accent-color: var(--accent-color);
-    cursor: not-allowed;
-}
-
-.feature-checkbox label {
-    font-size: 14px;
-    color: var(--text-muted);
-    cursor: not-allowed;
-    font-weight: 400;
+    flex-grow: 1;
 }
 
 .features-container {
@@ -791,7 +771,8 @@ header.scrolled {
 .cta-container {
     display: flex;
     justify-content: flex-start;
-    margin-top: 40px;
+    margin-top: auto;
+    padding-top: 20px;
 }
 
 .cta-button {
@@ -1061,8 +1042,8 @@ header.scrolled {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     position: relative;
     flex: 1;
-    justify-content: space-between;
 }
+
 
 /* Removed hover effects */
 
@@ -1188,6 +1169,37 @@ header.scrolled {
 }
 
 .feature-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.feature-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    accent-color: #84ff00;
+    cursor: default;
+    filter: brightness(1.1);
+    pointer-events: none;
+}
+
+.feature-checkbox input[type="checkbox"]:checked {
+    accent-color: #84ff00;
+    background-color: #84ff00;
+    border-color: #84ff00;
+}
+
+.feature-checkbox label {
+    font-size: 14px;
+    color: var(--text-muted);
+    cursor: default;
+    font-weight: 400;
+    user-select: none;
+}
+
+/* Hide the actual checkbox for interactive features */
+.features-list .feature-checkbox {
     /* Hide the actual checkbox */
     opacity: 0;
     position: absolute;
@@ -1302,6 +1314,7 @@ header.scrolled {
 .plan-description {
     margin: 20px 0;
     padding: 0 10px;
+    flex-grow: 0;
 }
 
 .plan-description p {
@@ -1966,12 +1979,6 @@ header.scrolled {
     backdrop-filter: blur(10px);
 }
 
-.email-wrapper:hover {
-    background: rgba(124, 255, 79, 0.2);
-    border-color: #7cff4f;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(124, 255, 79, 0.3);
-}
 
 .email-icon {
     color: #7cff4f;
@@ -1983,10 +1990,6 @@ header.scrolled {
     transition: all 0.3s ease;
 }
 
-.email-wrapper:hover .email-icon {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 8px #7cff4f);
-}
 
 .email-link {
     color: #ffffff;
@@ -1997,10 +2000,6 @@ header.scrolled {
     letter-spacing: 0.5px;
 }
 
-.email-link:hover {
-    color: #7cff4f;
-    text-shadow: 0 0 10px rgba(124, 255, 79, 0.5);
-}
 
 @keyframes glow-line {
 
@@ -2135,6 +2134,17 @@ header.scrolled {
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
