@@ -771,6 +771,30 @@ header.scrolled {
     margin: 0px;
 }
 
+/* Discount styling */
+.discount-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.original-price {
+    font-size: 20px;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.discounted-price {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+
 .price-title h2 {
     font-size: 24px;
     font-weight: bold;
@@ -798,7 +822,19 @@ header.scrolled {
     text-align: center;
     margin-top: 8px;
     font-weight: 500;
-    letter-spacing: 0.5px;
+}
+
+.discount-explanation {
+    font-size: 10px;
+    color: #ff6b6b;
+    text-align: center;
+    margin-top: 4px;
+    font-weight: 600;
+    background: rgba(255, 107, 107, 0.1);
+    padding: 3px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+    letter-spacing: 0.2px;
 }
 
 .plan-features {
@@ -2401,6 +2437,21 @@ header.scrolled {
 
     .price {
         font-size: 2.2rem;
+    }
+
+    .discounted-price {
+        font-size: 2.2rem;
+    }
+
+    .original-price {
+        font-size: 16px;
+    }
+
+
+    .discount-explanation {
+        font-size: 9px;
+        padding: 2px 4px;
+        margin-top: 3px;
     }
 
     .story-path {
