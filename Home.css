@@ -448,7 +448,7 @@ header.scrolled {
     width: 100%;
     max-width: 600px;
     opacity: 0;
-    /* Animation for the container */
+    /* Animation for container */
     animation: fadeInUp 0.8s ease-out 0.8s forwards;
 }
 
