@@ -1,0 +1,7 @@
+.story {
+    text-align: center;
+}
+
+.story .section-badge {
+    display: inline-block !important;
+}

@@ -9,6 +9,9 @@
     <meta name="twitter:image" content="https://www.commitrix.com/commitrix.png">
     <title>Commitrix</title>
     <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="benefits-fix.css">
+    <link rel="stylesheet" href="story-badge-fix.css">
+    <link rel="stylesheet" href="shine-animation.css">
     <link rel="icon" type="image/png" href="/img/Commitrix.png">
     <link rel="icon" type="image/png" href="img/Commitrix.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,8 +40,9 @@
             <div class="nav-links" id="main-nav">
                 <div class="nav-indicator"></div>
                 <a href="#home" data-page="home" aria-label="Home">Home</a>
-                <a href="#story" data-page="story" aria-label="Story">My Process</a>
+                <a href="#story" data-page="story" aria-label="Story">Process</a>
                 <a href="#portfolio" data-page="story" aria-label="Story">Portfolio</a>
+                <a href="#benefits" data-page="benefits" aria-label="Benefits">Benefits</a>
                 <a href="#pricing" data-page="pricing" aria-label="Pricing">Pricing</a>
                 <a href="#faq" data-page="faq" aria-label="FAQ">FAQ</a>
             </div>
@@ -57,8 +61,9 @@
             <div class="mobile-nav-links" id="mobile-nav-links-list">
                 <a href="#home" data-page="home" aria-label="Home">Home</a>
                 <a href="#process" data-page="work" aria-label="Work">Work</a>
-                <a href="#story" data-page="story" aria-label="Story">My Process</a>
+                <a href="#story" data-page="story" aria-label="Story">Process</a>
                 <a href="#portfolio" data-page="story" aria-label="Story">Portfolio</a>
+                <a href="#benefits" data-page="benefits" aria-label="Benefits">Benefits</a>
                 <a href="#pricing" data-page="pricing" aria-label="Pricing">Pricing</a>
                 <a href="#faq" data-page="faq" aria-label="FAQ">FAQ</a>
                 <!-- <a href="Login.html" data-page="login" aria-label="Log in">Log in</a> -->
@@ -67,12 +72,11 @@
     </header>
 
     <section class="hero" id="home">
-        <span class="section-badge">Transform Ideas</span>
-        <h1>Launch-Ready Landing Pages for <span class="accent-text">Your Product, Course, or Startup</span></h1>
-        <p>Whether you're announcing a new course, launching a product, or starting your brand, I design websites that
-            make your idea shine — fast and hassle-free.</p>
-        <div class="hero-actions">
+        <span class="section-badge">Available for New Projects</span>
+        <h1>Launch-Ready Landing Pages for <span class="accent-text">Your AI or SaaS Product</span></h1>
+        <p>I design high-converting landing pages that turn visitors into customers. Whether you're launching an AI tool, SaaS product, or a Startup, I'll create a website that clearly communicates your value and drives results       <div class="hero-actions">
             <a href="#pricing" class="action-btn primary" aria-label="Check Prices">Check Prices</a>
+            <a href="#portfolio" class="action-btn secondary" aria-label="View Work">View Work</a>
         </div>
         <div class="features">
             <div class="feature">
@@ -105,7 +109,7 @@
 
 
     <section class="story" id="story">
-        <h1>My Exact Step by Step Process</h1>
+        <span class="section-badge">Process</span>
         <div class="story-path-container">
             <div class="story-path">
                 <div class="path-line"></div>
@@ -122,10 +126,10 @@
                         <div class="connector-fill"></div>
                     </div>
                     <div class="content">
-                        <h2>Be my customer</h2>
-                        <p>Complete the payment and become my customer. If you have questions about the services I
-                            offer, don't hesitate to book a zoom call. Once you become my customer, I will send you an
-                            email with necessary information about how I will continue the project.</p>
+                        <h2>Become a Commitrix customer</h2>
+                        <p>Complete the payment and become a Commitrix customer. If you have questions about the services I
+                            offer, don't hesitate to book a call. Once you become customer, I will send you an
+                            email with necessary information about how we will continue the project.</p>
                         <a href="https://calendly.com/eshgin-commitrix/15-minute-discussing" class="learn-more"
                             target="_blank">Book a call<span class="arrow">→</span></a>
 
@@ -184,97 +188,106 @@
     <!-- Portfolio Section -->
     <section class="portfolio-section" id="portfolio">
         <div class="container">
-            <div class="section-badge">My Latest Work</div>
+            <div class="section-badge">Latest Work</div>
 
             <div class="portfolio-grid">
-                <div class="portfolio-card featured" data-url="https://aura-nft-art-display.lovable.app">
+                <div class="portfolio-card" data-url="https://aura-nft-art-display.lovable.app">
                     <div class="card-image">
-                        <img src="img/work1.png" alt="Modern E-commerce Platform">
-                        <div class="card-overlay">
-                            <div class="card-content">
-                                <h3 class="card-title">Modern NFT Website</h3>
-                                <p class="card-description">A website for displaying NFTs of a creator</p>
-                            </div>
-                            <div class="arrow-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                        </div>
+                        <img src="img/work1.png" alt="Modern NFT Website">
                     </div>
                 </div>
 
-                <div class="portfolio-card" data-url="https://eshgin10.github.io/Modern-Payment-Website/">
+                <div class="portfolio-card" data-url="https://eshgin10.github.io/CodeFlow/">
                     <div class="card-image">
-                        <img src="img/work5.png" alt="">
-                        <div class="card-overlay">
-                            <div class="card-content">
-                                <h3 class="card-title">Payment SaaS</h3>
-                                <p class="card-description">Clean and intuitive Payment Service</p>
-                            </div>
-                            <div class="arrow-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                        </div>
+                        <img src="img/work3.png" alt="SaaS Landing Page">
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-url="https://eshgin10.github.io/Cortex/">
+                    <div class="card-image">
+                        <img src="img/work8.png" alt="Cortex AI Website">
+                    </div>
+                </div>
+
+                                <div class="portfolio-card" data-url="https://eshgin10.github.io/F1-Waitlist/">
+                    <div class="card-image">
+                        <img src="img/work5.png" alt="F1-Waitlist">
                     </div>
                 </div>
 
                 <div class="portfolio-card" data-url="https://devspark-nexus.lovable.app/">
                     <div class="card-image">
-                        <img src="img/work2.png" alt="Creative Agency Site">
-                        <div class="card-overlay">
-                            <div class="card-content">
-                                <h3 class="card-title">Programming Course</h3>
-                                <p class="card-description">Ultimate program to create code geniusess</p>
-                            </div>
-                            <div class="arrow-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                        </div>
+                        <img src="img/work2.png" alt="Programming Course">
                     </div>
                 </div>
 
-                <div class="portfolio-card" data-url="https://eshgin10.github.io/saas-landing-page/">
+
+
+                <div class="portfolio-card" data-url="https://eshgin10.github.io/Horizon-Waitlist/">
                     <div class="card-image">
-                        <img src="img/work3.png" alt="SaaS Landing Page">
-                        <div class="card-overlay">
-                            <div class="card-content">
-                                <h3 class="card-title">SaaS Landing Page</h3>
-                                <p class="card-description">High-converting landing page design</p>
-                            </div>
-                            <div class="arrow-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                        </div>
+                        <img src="img/work7.png" alt="Horizon Waitlist">
                     </div>
                 </div>
 
-                <div class="portfolio-card" data-url="https://eshgin10.github.io/Fintech/#contact">
+                                <div class="portfolio-card" data-url="https://eshgin10.github.io/Fintech/">
                     <div class="card-image">
-                        <img src="img/work6.png" alt="Restaurant Website">
-                        <div class="card-overlay">
-                            <div class="card-content">
-                                <h3 class="card-title">Intelligent Finance Website</h3>
-                                <p class="card-description">Smart Finance Powered by AI</p>
-                            </div>
-                            <div class="arrow-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                        </div>
+                        <img src="img/work6.png" alt="Intelligent Finance Website">
                     </div>
+                </div>
+
+
+                <div class="portfolio-card" data-url="https://preview--aether-genesis-site-spark.lovable.app/">
+                    <div class="card-image">
+                        <img src="img/work9.png" alt="Aether Robotics">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Portfolio Cursor -->
+    <div class="portfolio-cursor" id="portfolioCursor">
+        <span class="portfolio-cursor-text">VIEW SITE</span>
+        <svg class="portfolio-cursor-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 17L17 7M17 7H7M17 7V17" />
+        </svg>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <div class="section-badge">Why Choose Commitrix</div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2769/2769339.png" alt="Fast Delivery" width="48" height="48">
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your website delivered within 1 week without compromising on quality.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1336/1336494.png" alt="Development in Code" width="48" height="48">
+                    </div>
+                    <h3>Development in Code</h3>
+                    <p>Hand-coded websites built with clean, maintainable code for optimal performance.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png" alt="Custom Design" width="48" height="48">
+                    </div>
+                    <h3>Custom Design</h3>
+                    <p>Unique designs tailored to your brand and business needs.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3588/3588314.png" alt="High Conversion" width="48" height="48">
+                    </div>
+                    <h3>High Conversion</h3>
+                    <p>Strategically designed to turn visitors into customers and maximize results.</p>
                 </div>
             </div>
         </div>
@@ -283,74 +296,53 @@
     <section class="pricing" id="pricing">
         <span class="section-badge">Pricing Plans</span>
         <div class="pricing-cards">
+        
+
             <div class="pricing-card featured">
-                <div class="price-box">
-                    <div class="price-tag">
-                        <span class="price-indicator"></span>
-                        <div class="discount-container">
-                            <span class="original-price">$2999</span>
-                            <span class="discounted-price">$1499</span>
-                            <div class="discount-explanation">50% off - New company launch pricing!</div>
-                        </div>
-                    </div>
-                    <div class="price-subtitle">Full Landing Page</div>
+                <div class="discount-banner">50% off for early customers</div>
+                <div class="card-header">
+                    <h3 class="plan-title">Landing Page Design</h3>
+                    <p class="plan-subtitle">Complete end-to-end solution</p>
                 </div>
-
-                <div class="plan-description">
-                    <p>Complete end-to-end solution including custom design, full development, responsive optimization, SEO setup, and deployment. Perfect for established businesses and startups looking for a comprehensive, high-converting landing page with all premium features.</p>
+                <div class="card-pricing">
+                    <div class="price-wrapper">
+                        <span class="original-price">$2999</span>
+                        <span class="discounted-price">$1499</span>
+                    </div>
+                    <p class="billing-info">One-time payment</p>
                 </div>
-
-                <div class="plan-features">
-                    <div class="feature-checkbox">
-                        <input type="checkbox" id="full-custom-design" checked>
-                        <label for="full-custom-design">1 page website (up to 12 sections)</label>
-                    </div>
-                    <div class="feature-checkbox">
-                        <input type="checkbox" id="full-responsive" checked>
-                        <label for="full-responsive">couple of revisions</label>
-                    </div>
-                    <div class="feature-checkbox">
-                        <input type="checkbox" id="full-seo" checked>
-                        <label for="full-seo">React development</label>
-                    </div>
-                    <div class="feature-checkbox">
-                        <input type="checkbox" id="full-fast-loading" checked>
-                        <label for="full-fast-loading">Custom design</label>
-                    </div>
-                    <div class="feature-checkbox">
-                        <input type="checkbox" id="full-mobile-optimized" checked>
-                        <label for="full-mobile-optimized">Mobile optimization</label>
-                    </div>
-                </div>
-
-                <div class="cta-container">
-                    <a href="https://buy.stripe.com/9B67sM85z3cz7KP8ZM8N201"
-                        class="cta-button" target="_blank">Purchase Plan!</a>
-                </div>
+                <ul class="features-list">
+                    <li><span class="check">✓</span> 1 page website (up to 12 sections)</li>
+                    <li><span class="check">✓</span> Custom design</li>
+                    <li><span class="check">✓</span> React development</li>
+                    <li><span class="check">✓</span> Couple of revisions</li>
+                    <li><span class="check">✓</span> Mobile optimization</li>
+                </ul>
+                <a href="https://buy.stripe.com/9B67sM85z3cz7KP8ZM8N201" class="cta-button" target="_blank">Get started</a>
             </div>
 
-            <div class="pricing-card custom-pricing-card">
-                <div class="price-box">
-                    <div class="price-tag">
-                        <span class="price-indicator"></span>
-                        <span class="price">Custom</span>
-                    </div>
-                    <div class="price-subtitle">Offer Yourself</div>
+            <div class="pricing-card">
+                <div class="card-header">
+                    <h3 class="plan-title">Need Something Specific?</h3>
+                    <p class="plan-subtitle">Tailored to your needs</p>
                 </div>
-
-                <div class="plan-description">
-                    <p>Need something specific? Let's discuss your unique requirements and create a custom solution that perfectly fits your business goals. Perfect for complex projects, enterprise needs, or when you want a personalized approach.</p>
+                <div class="card-pricing">
+                    <div class="price">Custom</div>
+                    <p class="billing-info">Contact for pricing</p>
                 </div>
-
-                <div class="cta-container">
-                    <a href="https://calendly.com/eshgin-commitrix/15-minute-discussing"
-                        class="cta-button" target="_blank">Let's Talk</a>
-                </div>
+                <ul class="features-list">
+                    <li><span class="check">✓</span> Offer Your Price</li>
+                    <li><span class="check">✓</span> Multiple pages</li>
+                    <li><span class="check">✓</span> Advanced features</li>
+                    <li><span class="check">✓</span> Priority support</li>
+                    <li><span class="check">✓</span> Unlimited revisions</li>
+                </ul>
+                <a href="https://calendly.com/eshgin-commitrix/15-minute-discussing" class="cta-button" target="_blank">Get started</a>
             </div>
         </div>
 
 
-        
+
         <!-- <div class="pricing-cards">
              <div class="pricing-card">
                   <h3 class="plan-name">Beginner</h3>
@@ -453,8 +445,9 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Project timelines vary depending on complexity, but most landing pages are delivered within 1 week.
-                     I prioritize speed without compromising quality.</p>
+                    <p>Project timelines vary depending on complexity, but most landing pages are delivered within 1
+                        week.
+                        I prioritize speed without compromising quality.</p>
                 </div>
             </div>
 
@@ -466,7 +459,7 @@
                 <div class="faq-answer">
                     <p>No, I do not offer refunds. Once the project begins, I allocate time, resources, and expertise
                         to deliver your custom website. To ensure transparency: If you have concerns, I'm happy to
-                        discuss them before starting. My goal is to make sure you love your new website!</p>
+                        discuss them before starting. Commitrix's goal is to make sure you love your new website!</p>
                 </div>
             </div>
 
@@ -492,8 +485,8 @@
                         <h2>Ready to Transform Your Ideas?</h2>
                         <p>Schedule a free consultation call with me and discover how I can help you launch your
                             product, course, or startup with a stunning landing page that converts.</p>
-                        <a href="https://calendly.com/eshgin-commitrix/15-minute-discussing"
-                            class="cta-button2" target="_blank">
+                        <a href="https://calendly.com/eshgin-commitrix/15-minute-discussing" class="cta-button2"
+                            target="_blank">
                             <span>Book a Call</span>
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                 <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"

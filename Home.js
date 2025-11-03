@@ -664,9 +664,29 @@ document.head.appendChild(styleSheet);
 // Portfolio Section JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     const portfolioCards = document.querySelectorAll('.portfolio-card');
+    const portfolioCursor = document.getElementById('portfolioCursor');
     
-    // Add click functionality to portfolio cards
-    portfolioCards.forEach(card => {
+    // Custom cursor functionality
+    function initPortfolioCursor() {
+        portfolioCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                portfolioCursor.classList.add('active');
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                portfolioCursor.classList.remove('active');
+            });
+            
+            card.addEventListener('mousemove', function(e) {
+                portfolioCursor.style.left = e.clientX + 'px';
+                portfolioCursor.style.top = e.clientY + 'px';
+            });
+        });
+    }
+    
+    // Initialize cards
+    portfolioCards.forEach((card, index) => {
+        // Add click functionality
         card.addEventListener('click', function() {
             const url = this.getAttribute('data-url');
             if (url) {
@@ -675,30 +695,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Simple entrance animation without flying out
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    // Initialize cursor
+    initPortfolioCursor();
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Initially hide cards for entrance animation
-    portfolioCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-        observer.observe(card);
-    });
-    
-    // Add touch support for mobile
+    // Touch support for mobile
     portfolioCards.forEach(card => {
         let touchStartY = 0;
         
@@ -710,7 +710,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const touchEndY = e.changedTouches[0].clientY;
             const touchDiff = touchStartY - touchEndY;
             
-            // Only trigger click if it's not a scroll gesture
             if (Math.abs(touchDiff) < 10) {
                 const url = this.getAttribute('data-url');
                 if (url) {
@@ -719,31 +718,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Dynamic grid adjustment based on screen size
-    function adjustGrid() {
-        const cards = document.querySelectorAll('.portfolio-card');
-        
-        if (window.innerWidth < 768) {
-            // Mobile: single column
-            cards.forEach(card => {
-                card.classList.remove('featured');
-            });
-        } else if (window.innerWidth < 1024) {
-            // Tablet: limit featured cards
-            cards.forEach((card, index) => {
-                if (index > 1) {
-                    card.classList.remove('featured');
-                }
-            });
-        }
-    }
-    
-    // Initial grid adjustment
-    adjustGrid();
-    
-    // Adjust grid on window resize
-    window.addEventListener('resize', adjustGrid);
 });
 
     // CTA Section JavaScript
