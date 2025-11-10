@@ -1,0 +1,99 @@
+.footer {
+    background: var(--bg-color);
+    padding: 60px 0 0;
+    border-top: 1px solid rgba(124, 255, 79, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-creator {
+    flex: 1;
+}
+
+.creator-text {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-link:first-child::after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    background: rgba(124, 255, 79, 0.3);
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+.footer-link:hover {
+    color: var(--accent-color);
+}
+
+.footer-brand {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.brand-text {
+    font-size: clamp(5rem, 20vw, 35rem);
+    font-weight: 900;
+    color: var(--accent-color);
+    margin: 0;
+    padding: 0 20px;
+    letter-spacing: -0.02em;
+    line-height: 0.8;
+    text-transform: uppercase;
+    font-family: 'Sankofa Display', sans-serif;
+    background: linear-gradient(to bottom, var(--accent-color) 0%, var(--accent-color) 70%, transparent 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer-links {
+        gap: 20px;
+        justify-content: center;
+    }
+    
+    .footer-link {
+        font-size: 0.9rem;
+    }
+}
