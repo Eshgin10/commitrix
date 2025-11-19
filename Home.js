@@ -434,48 +434,7 @@ allNavLinks.forEach(link => {
     });
 
 
-    // --- Logo Slider (Commitrix Loop Fix) ---
-    function setupLogoSlider() {
-        const sliderTrack = document.querySelector('.slide-track');
-        if (!sliderTrack) return;
 
-        const originalSlides = Array.from(sliderTrack.children);
-        if (originalSlides.length === 0) return;
-
-        // Clear existing clones if any (for resize)
-        sliderTrack.innerHTML = '';
-        originalSlides.forEach(slide => sliderTrack.appendChild(slide.cloneNode(true)));
-
-
-        const totalOriginalWidth = originalSlides.reduce((sum, slide) => sum + slide.offsetWidth + parseFloat(getComputedStyle(slide).marginRight || 0) + parseFloat(getComputedStyle(slide).marginLeft || 0), 0);
-
-        // Determine how many sets of clones are needed to fill more than the viewport
-        // We need enough for original + one full set of clones for the -50% trick to work perfectly.
-        // So the track should be at least 2x totalOriginalWidth.
-        // The CSS @keyframes scroll already uses translateX(-50%) which expects the track to be double the width of one full iteration content.
-
-        originalSlides.forEach(slide => {
-            const clone = slide.cloneNode(true);
-            sliderTrack.appendChild(clone);
-        });
-
-        // The CSS animation `transform: translateX(-50%)` relies on the track being exactly twice
-        // the width of the content that should appear to loop.
-        // Here, `totalOriginalWidth` is the width of one set of "Commitrix" texts.
-        // By cloning them once, `slide-track` now contains two sets.
-        // So, its total width is `2 * totalOriginalWidth`.
-        // Translating by -50% means translating by `-totalOriginalWidth`, which shows the cloned set
-        // perfectly aligned as if it's the start of the loop.
-
-        // Optional: Adjust animation duration based on width for consistent speed
-        // const desiredSpeed = 50; // pixels per second
-        // const duration = totalOriginalWidth / desiredSpeed;
-        // sliderTrack.style.animationDuration = `${Math.max(15, duration)}s`; // Ensure a minimum duration
-
-        // No need to dynamically create @keyframes if the CSS one is generic (translateX(-50%))
-        // and the track width is correctly set up with clones.
-    }
-    setupLogoSlider();
 
 
     // --- Story Section Improvement ---
@@ -568,7 +527,7 @@ allNavLinks.forEach(link => {
                 navIndicator.style.opacity = '0';
             }
         }
-        setupLogoSlider(); // Re-setup slider on resize
+
         if (storyPathContainer) {
             updateTimelineOnScroll(window.scrollY); // Update timeline on resize
         }

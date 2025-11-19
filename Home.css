@@ -514,96 +514,176 @@ header.scrolled {
     background-size: contain;
 }
 
-/* Logo Slider */
+/* Logo Slider - Two Strips */
 .logo-slider {
-    padding: 3rem 0;
-    background: #181818;
-    /* Slightly lighter than pure dark */
-    overflow: hidden;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    padding: 0;
+    background: transparent;
+    overflow: visible;
     position: relative;
-    /* For pseudo-elements */
+    height: 250px;
 }
 
-.slider-container {
+.strip-container {
+    position: relative;
     width: 100%;
-    /* max-width: 1400px; /* Let it be full width for the fades */
-    margin: 0 auto;
-    position: relative;
+    height: 100%;
 }
 
-.slide-track {
+.strip {
+    position: absolute;
+    height: 70px;
+    overflow: hidden;
+    white-space: nowrap;
     display: flex;
     align-items: center;
-    gap: 4rem;
-    /* This is important for spacing */
-    /* width will be set by JS to ensure it's large enough */
-    animation-name: scroll;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    /* animation-duration will be set by JS or use a default like 40s */
-    animation-duration: 40s;
-    /* Default, can be overridden by JS if needed */
 }
 
+.strip.straight {
+    top: 30%;
+    left: -20%;
+    width: 140%;
+    transform: translateY(-50%) rotate(6deg);
+    background: rgba(132, 255, 0, 0.15);
+    border-top: 1px solid rgba(132, 255, 0, 0.3);
+    border-bottom: 1px solid rgba(132, 255, 0, 0.3);
+    transform-origin: center;
+}
 
-.slide {
-    min-width: 220px;
-    /* Ensure items have a base width */
-    height: 60px;
-    display: flex;
+.strip.angled {
+    top: 30%;
+    left: -20%;
+    width: 140%;
+    transform: translateY(-50%) rotate(-6deg);
+    background: rgb(0, 0, 0);
+    border-top: 1px solid rgba(132, 255, 0, 0.4);
+    border-bottom: 1px solid rgba(132, 255, 0, 0.4);
+    transform-origin: center;
+}
+
+.strip-track {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
+    animation: scrollStrip 20s linear infinite;
+    height: 100%;
+}
+
+.strip-track span {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 3rem;
     color: var(--accent-color);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.8rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(132, 255, 0, 0.3);
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    letter-spacing: 1px;
     white-space: nowrap;
 }
 
-.slide:hover {
-    color: var(--secondary-accent);
-    text-shadow: 0 0 20px rgba(132, 255, 0, 0.7);
-}
-
-/* Keyframes are defined in JS for dynamic width, or can be static if slide count is fixed */
-@keyframes scroll {
+@keyframes scrollStrip {
     0% {
         transform: translateX(0);
     }
-
     100% {
         transform: translateX(-50%);
     }
-
-    /* Translate by half the track width (original + clones) */
 }
 
-
-.slider-container::before,
-.slider-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 100px;
-    /* Wider fade */
-    height: 100%;
-    z-index: 2;
-    /* Above slides */
+@media (max-width: 1024px) {
+    .logo-slider {
+        height: 200px;
+    }
+    
+    .strip {
+        height: 65px;
+    }
+    
+    .strip.straight {
+        transform: translateY(-50%) rotate(7deg);
+    }
+    
+    .strip.angled {
+        transform: translateY(-50%) rotate(-7deg);
+        left: -15%;
+        width: 130%;
+    }
+    
+    .strip-track span {
+        font-size: 1.5rem;
+        padding: 0 2.5rem;
+    }
 }
 
-.slider-container::before {
-    left: 0;
-    background: linear-gradient(to right, var(--bg-dark) 20%, transparent);
+@media (max-width: 768px) {
+    .logo-slider {
+        height: 160px;
+    }
+    
+    .strip {
+        height: 55px;
+    }
+    
+    .strip.straight {
+        transform: translateY(-50%) rotate(8deg);
+    }
+    
+    .strip.angled {
+        transform: translateY(-50%) rotate(-8deg);
+        left: -10%;
+        width: 120%;
+    }
+    
+    .strip-track span {
+        font-size: 1.2rem;
+        padding: 0 2rem;
+    }
 }
 
-.slider-container::after {
-    right: 0;
-    background: linear-gradient(to left, var(--bg-dark) 20%, transparent);
+@media (max-width: 480px) {
+    .logo-slider {
+        height: 130px;
+    }
+    
+    .strip {
+        height: 45px;
+    }
+    
+    .strip.straight {
+        transform: translateY(-50%) rotate(10deg);
+    }
+    
+    .strip.angled {
+        transform: translateY(-50%) rotate(-10deg);
+        left: -5%;
+        width: 110%;
+    }
+    
+    .strip-track span {
+        font-size: 0.9rem;
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .logo-slider {
+        height: 120px;
+    }
+    
+    .strip {
+        height: 40px;
+    }
+    
+    .strip.straight {
+        transform: translateY(-50%) rotate(12deg);
+    }
+    
+    .strip.angled {
+        transform: translateY(-50%) rotate(-12deg);
+    }
+    
+    .strip-track span {
+        font-size: 0.8rem;
+        padding: 0 1.2rem;
+    }
 }
 
 
@@ -2632,20 +2712,7 @@ header.scrolled {
         font-size: 0.95rem;
     }
 
-    .slide {
-        min-width: 180px;
-        font-size: 1.3rem;
-        letter-spacing: 1px;
-    }
 
-    .slide-track {
-        gap: 3rem;
-    }
-
-    .slider-container::before,
-    .slider-container::after {
-        width: 60px;
-    }
 
     .story h1 {
         font-size: 2rem;
