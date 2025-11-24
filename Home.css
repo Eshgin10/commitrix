@@ -143,6 +143,7 @@ header.scrolled {
     padding: 0 5%;
     max-width: 1400px;
     margin: 0 auto;
+    gap: 20px;
 }
 
 .logo {
@@ -156,6 +157,7 @@ header.scrolled {
     text-decoration: none;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    flex-shrink: 0;
 }
 
 .logo-dot {
@@ -234,29 +236,50 @@ header.scrolled {
 }
 
 
-.nav-cta a {
-    text-decoration: none;
-    color: var(--text-color);
-    border: 1px solid rgba(132, 255, 0, 0.5);
-    /* Accent border */
-    padding: 10px 20px;
-    /* Adjusted padding */
-    border-radius: 50px;
-    font-size: 0.95rem;
-    /* Slightly smaller */
-    transition: all 0.3s ease;
-    background-color: transparent;
-    /* Minimalistic */
-    font-weight: 500;
+.nav-cta-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
 }
 
-.nav-cta a:hover {
-    background-color: rgba(132, 255, 0, 0.15);
-    /* Subtle accent hover */
-    border-color: var(--accent-color);
-    color: var(--accent-color);
+.cta-btn {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.dm-btn {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dm-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(132, 255, 0, 0.1);
+}
+
+.book-btn {
+    background-color: var(--accent-color);
+    color: var(--btn-text);
+    border: 1px solid var(--accent-color);
+}
+
+.book-btn:hover {
+    background-color: var(--secondary-accent);
+    border-color: var(--secondary-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(132, 255, 0, 0.2);
 }
 
 .burger-menu {
@@ -2473,20 +2496,58 @@ header.scrolled {
 
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .nav-container {
+        gap: 15px;
+    }
+    
+    .nav-links a {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .cta-btn {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+}
+
 @media (max-width: 992px) {
     .nav-links {
         display: none;
     }
 
-    .nav-cta {
+    .nav-cta-buttons {
         display: none;
     }
 
-    /* Hide CTA on medium screens too for more space */
     .burger-menu {
         display: block;
         opacity: 1;
-        /* Ensure visible */
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 4%;
+    }
+    
+    .logo {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 3%;
+    }
+    
+    header {
+        padding: 12px 0;
     }
 
     .process-steps {
