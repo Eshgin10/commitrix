@@ -3164,3 +3164,76 @@ header.scrolled {
         margin: -50px -20px 20px;
     }
 }
+
+/* Futuristic Custom Cursor */
+body {
+    cursor: none;
+}
+
+a, button, .action-btn, .learn-more, .cta-btn, .portfolio-card {
+    cursor: none;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    opacity: 0;
+}
+
+.custom-cursor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(132, 255, 0, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.custom-cursor.active,
+.cursor-follower.active {
+    opacity: 1;
+}
+
+.custom-cursor.hover {
+    transform: scale(0.5);
+}
+
+.cursor-follower.hover {
+    width: 60px;
+    height: 60px;
+    background: rgba(132, 255, 0, 0.05);
+    border-color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    body {
+        cursor: auto;
+    }
+    
+    .custom-cursor,
+    .cursor-follower {
+        display: none;
+    }
+}

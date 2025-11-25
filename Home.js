@@ -707,3 +707,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Futuristic Custom Cursor
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth > 768) {
+        const cursor = document.createElement('div');
+        cursor.className = 'custom-cursor';
+        const follower = document.createElement('div');
+        follower.className = 'cursor-follower';
+        document.body.appendChild(cursor);
+        document.body.appendChild(follower);
+
+        let mouseX = 0, mouseY = 0;
+        let followerX = 0, followerY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
+            cursor.classList.add('active');
+            follower.classList.add('active');
+        });
+
+        function animateFollower() {
+            followerX += (mouseX - followerX) * 0.1;
+            followerY += (mouseY - followerY) * 0.1;
+            follower.style.left = followerX + 'px';
+            follower.style.top = followerY + 'px';
+            requestAnimationFrame(animateFollower);
+        }
+        animateFollower();
+
+        const hoverElements = document.querySelectorAll('a, button, .action-btn, .learn-more, .cta-btn, .portfolio-card');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+                follower.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+                follower.classList.remove('hover');
+            });
+        });
+    }
+});
