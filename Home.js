@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Loading Screen ---
     const loadingScreen = document.getElementById('loadingScreen');
-    
+
     // Hide loading screen after 3.1 seconds
     setTimeout(() => {
         if (loadingScreen) {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentActiveLink = null;
     let isMobileMenuOpen = false;
-    let isUserNavigatingToHash = false; 
+    let isUserNavigatingToHash = false;
     let scrollEndTimer = null;
 
     // updated code in order to fix burger menu issue
@@ -236,55 +236,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    
-    
+
+
     // Add this code to the click event listener for allNavLinks
-allNavLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        const href = link.getAttribute('href');
-        if (href && href.startsWith('#')) {
-            e.preventDefault();
-            const sectionId = href.substring(1);
-            const section = document.getElementById(sectionId);
+    allNavLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const sectionId = href.substring(1);
+                const section = document.getElementById(sectionId);
 
-            if (section) smoothScrollTo(section);
-            else if (href === '#home') smoothScrollTo(0);
+                if (section) smoothScrollTo(section);
+                else if (href === '#home') smoothScrollTo(0);
 
-            setActiveLink(link);
-            if (isMobileMenuOpen && mobileMenuPanel) {
-                mobileMenuPanel.classList.remove('active');
-                burgerMenu.setAttribute('aria-expanded', 'false');
-                burgerMenu.classList.remove('active');
-                burgerMenu.classList.remove('is-x');
-                document.body.style.overflow = '';
-                isMobileMenuOpen = false;
-                burgerIcon.innerHTML = '☰';
+                setActiveLink(link);
+                if (isMobileMenuOpen && mobileMenuPanel) {
+                    mobileMenuPanel.classList.remove('active');
+                    burgerMenu.setAttribute('aria-expanded', 'false');
+                    burgerMenu.classList.remove('active');
+                    burgerMenu.classList.remove('is-x');
+                    document.body.style.overflow = '';
+                    isMobileMenuOpen = false;
+                    burgerIcon.innerHTML = '☰';
+                }
+            } else {
+                // For external links like FAQ.html, Login.html
+                setActiveLink(link);
+                if (isMobileMenuOpen && mobileMenuPanel) {
+                    mobileMenuPanel.classList.remove('active');
+                    burgerMenu.setAttribute('aria-expanded', 'false');
+                    burgerMenu.classList.remove('active');
+                    burgerMenu.classList.remove('is-x');
+                    document.body.style.overflow = '';
+                    isMobileMenuOpen = false;
+                    burgerIcon.innerHTML = '☰';
+                }
             }
-        } else {
-            // For external links like FAQ.html, Login.html
-            setActiveLink(link);
-            if (isMobileMenuOpen && mobileMenuPanel) {
-                mobileMenuPanel.classList.remove('active');
-                burgerMenu.setAttribute('aria-expanded', 'false');
-                burgerMenu.classList.remove('active');
-                burgerMenu.classList.remove('is-x');
-                document.body.style.overflow = '';
-                isMobileMenuOpen = false;
-                burgerIcon.innerHTML = '☰';
-            }
-        }
+        });
     });
-});    
 
     if (navLinksContainer) {
-    navLinksContainer.addEventListener('mouseleave', () => {
-        if (currentActiveLink) {
-            updateIndicator(currentActiveLink);
-        } else if (navIndicator) {
-            navIndicator.style.opacity = '0';
-        }
-    });
-}
+        navLinksContainer.addEventListener('mouseleave', () => {
+            if (currentActiveLink) {
+                updateIndicator(currentActiveLink);
+            } else if (navIndicator) {
+                navIndicator.style.opacity = '0';
+            }
+        });
+    }
     if (burgerMenu && mobileMenuPanel) {
         burgerMenu.addEventListener('click', () => {
             if (isMobileMenuOpen) {
@@ -553,44 +553,44 @@ allNavLinks.forEach(link => {
 });
 
 // Enhanced footer interactions
-document.addEventListener('DOMContentLoaded', function() {
-  const footer = document.querySelector('.footer');
-  const brandText = document.querySelector('.brand-text');
-  const emailWrapper = document.querySelector('.email-wrapper');
-  const emailLink = document.querySelector('.email-link');
+document.addEventListener('DOMContentLoaded', function () {
+    const footer = document.querySelector('.footer');
+    const brandText = document.querySelector('.brand-text');
+    const emailWrapper = document.querySelector('.footer-links');
+    const emailLink = document.querySelector('.email-link');
 
-  // Intersection Observer for footer animation
-  const footerObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animation = 'fadeInUp 1s ease-out';
-        brandText.style.animationDelay = '0.3s';
-        emailWrapper.style.animationDelay = '0.6s';
-      }
+    // Intersection Observer for footer animation
+    const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeInUp 1s ease-out';
+                if (brandText) brandText.style.animationDelay = '0.3s';
+                if (emailWrapper) emailWrapper.style.animationDelay = '0.6s';
+            }
+        });
+    }, {
+        threshold: 0.1
     });
-  }, {
-    threshold: 0.1
-  });
 
-  if (footer) {
-    footerObserver.observe(footer);
-  }
-
-
-
-  // Parallax effect for footer background
-  window.addEventListener('scroll', function() {
     if (footer) {
-      const scrolled = window.pageYOffset;
-      const footerOffset = footer.offsetTop;
-      const windowHeight = window.innerHeight;
-      
-      if (scrolled + windowHeight > footerOffset) {
-        const parallaxValue = (scrolled - footerOffset) * 0.5;
-        footer.style.backgroundPosition = `center ${parallaxValue}px`;
-      }
+        footerObserver.observe(footer);
     }
-  });
+
+
+
+    // Parallax effect for footer background
+    window.addEventListener('scroll', function () {
+        if (footer) {
+            const scrolled = window.pageYOffset;
+            const footerOffset = footer.offsetTop;
+            const windowHeight = window.innerHeight;
+
+            if (scrolled + windowHeight > footerOffset) {
+                const parallaxValue = (scrolled - footerOffset) * 0.5;
+                footer.style.backgroundPosition = `center ${parallaxValue}px`;
+            }
+        }
+    });
 });
 
 // CSS keyframes for animations (injected via JavaScript)
@@ -621,54 +621,54 @@ styleSheet.textContent = `
 document.head.appendChild(styleSheet);
 
 // Portfolio Section JavaScript
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const portfolioCards = document.querySelectorAll('.portfolio-card');
     const portfolioCursor = document.getElementById('portfolioCursor');
-    
+
     // Custom cursor functionality
     function initPortfolioCursor() {
         portfolioCards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 portfolioCursor.classList.add('active');
             });
-            
-            card.addEventListener('mouseleave', function() {
+
+            card.addEventListener('mouseleave', function () {
                 portfolioCursor.classList.remove('active');
             });
-            
-            card.addEventListener('mousemove', function(e) {
+
+            card.addEventListener('mousemove', function (e) {
                 portfolioCursor.style.left = e.clientX + 'px';
                 portfolioCursor.style.top = e.clientY + 'px';
             });
         });
     }
-    
+
     // Initialize cards
     portfolioCards.forEach((card, index) => {
         // Add click functionality
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function () {
             const url = this.getAttribute('data-url');
             if (url) {
                 window.open(url, '_blank');
             }
         });
     });
-    
+
     // Initialize cursor
     initPortfolioCursor();
-    
+
     // Touch support for mobile
     portfolioCards.forEach(card => {
         let touchStartY = 0;
-        
-        card.addEventListener('touchstart', function(e) {
+
+        card.addEventListener('touchstart', function (e) {
             touchStartY = e.touches[0].clientY;
         });
-        
-        card.addEventListener('touchend', function(e) {
+
+        card.addEventListener('touchend', function (e) {
             const touchEndY = e.changedTouches[0].clientY;
             const touchDiff = touchStartY - touchEndY;
-            
+
             if (Math.abs(touchDiff) < 10) {
                 const url = this.getAttribute('data-url');
                 if (url) {
@@ -679,13 +679,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-    // CTA Section JavaScript
-document.addEventListener('DOMContentLoaded', function() {
+// CTA Section JavaScript
+document.addEventListener('DOMContentLoaded', function () {
     const ctaButton = document.querySelector('.cta-button');
 
     // Button click tracking
     if (ctaButton) {
-        ctaButton.addEventListener('click', function(e) {
+        ctaButton.addEventListener('click', function (e) {
             // You can add calendar booking logic here
             // For example: open calendar modal, redirect to booking page, etc.
             console.log('CTA button clicked - redirect to calendar booking');
@@ -694,11 +694,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Prevent pricing feature checkboxes from being unchecked
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const planFeatures = document.querySelectorAll('.plan-features .feature-checkbox input[type="checkbox"]');
-    
+
     planFeatures.forEach(checkbox => {
-        checkbox.addEventListener('click', function(e) {
+        checkbox.addEventListener('click', function (e) {
             // Prevent unchecking - always keep it checked
             if (!this.checked) {
                 e.preventDefault();
