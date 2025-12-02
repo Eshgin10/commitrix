@@ -26,6 +26,35 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Manufacturing+Consent&family=Outfit:wght@100..900&family=Sankofa+Display&display=swap"
         rel="stylesheet">
+
+    <!-- Add small overrides to prevent strips/cursor from being clipped by ancestor overflow and ensure cursor visibility -->
+    <style>
+        /* Ensure the logo slider and its tracks can extend to the viewport edges */
+        .logo-slider,
+        .logo-slider .strip-container,
+        .logo-slider .strip,
+        .logo-slider .strip-track {
+            overflow: visible !important;
+            width: 100vw !important;
+            max-width: 100vw !important;
+            box-sizing: border-box;
+        }
+
+        /* Make the moving track span full width so endings are visible */
+        .logo-slider .strip-track {
+            display: inline-flex;
+            white-space: nowrap;
+        }
+
+        /* Ensure portfolio custom cursor stays on top and visible */
+        .portfolio-cursor {
+            position: fixed !important;
+            z-index: 9999 !important;
+            pointer-events: none !important;
+            /* avoid blocking clicks */
+            overflow: visible !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -98,6 +127,7 @@
         <p>I design high-converting landing pages that turn visitors into customers. Whether you're launching an AI
             tool, SaaS product, or a Startup, I'll create a website that clearly communicates your value and drives
             results
+        </p>
         <div class="hero-actions">
             <a href="#pricing" class="action-btn primary" aria-label="Check Prices">Check Prices</a>
             <a href="#portfolio" class="action-btn secondary" aria-label="View Work">View Work</a>
@@ -281,9 +311,6 @@
             <path d="M7 17L17 7M17 7H7M17 7V17" />
         </svg>
     </div>
-    </div>
-    </div>
-    </section>
 
     <!-- Benefits Section -->
     <section class="benefits-section" id="benefits">

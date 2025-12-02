@@ -572,28 +572,24 @@ header.scrolled {
     white-space: nowrap;
     display: flex;
     align-items: center;
+    left: 0;
+    width: 100%;
 }
 
 .strip.straight {
-    top: 30%;
-    left: -20%;
-    width: 140%;
+    top: 50%;
     transform: translateY(-50%) rotate(6deg);
     background: rgba(132, 255, 0, 0.15);
     border-top: 1px solid rgba(132, 255, 0, 0.3);
     border-bottom: 1px solid rgba(132, 255, 0, 0.3);
-    transform-origin: center;
 }
 
 .strip.angled {
-    top: 30%;
-    left: -20%;
-    width: 140%;
+    top: 50%;
     transform: translateY(-50%) rotate(-6deg);
     background: rgb(0, 0, 0);
     border-top: 1px solid rgba(132, 255, 0, 0.4);
     border-bottom: 1px solid rgba(132, 255, 0, 0.4);
-    transform-origin: center;
 }
 
 .strip-track {
