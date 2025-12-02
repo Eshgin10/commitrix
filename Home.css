@@ -595,7 +595,7 @@ header.scrolled {
 .strip-track {
     display: inline-flex;
     align-items: center;
-    animation: scrollStrip 20s linear infinite;
+    animation: scrollStrip 15s linear infinite;
     height: 100%;
 }
 
@@ -630,16 +630,6 @@ header.scrolled {
         height: 65px;
     }
 
-    .strip.straight {
-        transform: translateY(-50%) rotate(7deg);
-    }
-
-    .strip.angled {
-        transform: translateY(-50%) rotate(-7deg);
-        left: -15%;
-        width: 130%;
-    }
-
     .strip-track span {
         font-size: 1.5rem;
         padding: 0 2.5rem;
@@ -653,16 +643,6 @@ header.scrolled {
 
     .strip {
         height: 55px;
-    }
-
-    .strip.straight {
-        transform: translateY(-50%) rotate(8deg);
-    }
-
-    .strip.angled {
-        transform: translateY(-50%) rotate(-8deg);
-        left: -10%;
-        width: 120%;
     }
 
     .strip-track span {
@@ -680,16 +660,6 @@ header.scrolled {
         height: 45px;
     }
 
-    .strip.straight {
-        transform: translateY(-50%) rotate(10deg);
-    }
-
-    .strip.angled {
-        transform: translateY(-50%) rotate(-10deg);
-        left: -5%;
-        width: 110%;
-    }
-
     .strip-track span {
         font-size: 0.9rem;
         padding: 0 1.5rem;
@@ -703,14 +673,6 @@ header.scrolled {
 
     .strip {
         height: 40px;
-    }
-
-    .strip.straight {
-        transform: translateY(-50%) rotate(12deg);
-    }
-
-    .strip.angled {
-        transform: translateY(-50%) rotate(-12deg);
     }
 
     .strip-track span {
