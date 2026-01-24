@@ -1,17 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Loading Screen ---
-    const loadingScreen = document.getElementById('loadingScreen');
 
-    // Hide loading screen after 3.1 seconds
-    setTimeout(() => {
-        if (loadingScreen) {
-            loadingScreen.classList.add('fade-out');
-            // Remove from DOM after animation completes
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 800);
-        }
-    }, 3000);
 
     // --- Navigation Setup ---
     const navLinks = document.querySelectorAll('.nav-links a:not([href$="Login.html"]):not([href$="FAQ.html"])'); // Exclude external links for indicator
@@ -38,13 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (burgerMenu) {
             burgerMenu.setAttribute('aria-expanded', 'false');
             burgerMenu.classList.remove('active');
-            burgerMenu.classList.remove('is-x');
         }
         document.body.style.overflow = '';
+        document.documentElement.style.overflow = ''; // Restore html scrolling
         isMobileMenuOpen = false;
-        if (burgerIcon) {
-            burgerIcon.innerHTML = '☰';
-        }
     }
 
     function updateIndicator(link, isInstant = false) {
@@ -220,16 +205,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     mobileMenuPanel.classList.remove('active');
                     burgerMenu.setAttribute('aria-expanded', 'false');
                     burgerMenu.classList.remove('active');
-                    isMobileMenuOpen = false;
+                    closeMobileMenu();
                 }
             } else {
                 // For external links like FAQ.html, Login.html
                 setActiveLink(link); // This will correctly set active class, indicator hidden by its logic
+                // Updated closeMobileMenu to restore body scroll
                 if (isMobileMenuOpen && mobileMenuPanel) {
-                    mobileMenuPanel.classList.remove('active');
-                    burgerMenu.setAttribute('aria-expanded', 'false');
-                    burgerMenu.classList.remove('active');
-                    isMobileMenuOpen = false;
+                    closeMobileMenu();
                 }
                 // Allow default navigation
             }
@@ -237,44 +220,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-
-    // Add this code to the click event listener for allNavLinks
-    allNavLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            if (href && href.startsWith('#')) {
-                e.preventDefault();
-                const sectionId = href.substring(1);
-                const section = document.getElementById(sectionId);
-
-                if (section) smoothScrollTo(section);
-                else if (href === '#home') smoothScrollTo(0);
-
-                setActiveLink(link);
-                if (isMobileMenuOpen && mobileMenuPanel) {
-                    mobileMenuPanel.classList.remove('active');
-                    burgerMenu.setAttribute('aria-expanded', 'false');
-                    burgerMenu.classList.remove('active');
-                    burgerMenu.classList.remove('is-x');
-                    document.body.style.overflow = '';
-                    isMobileMenuOpen = false;
-                    burgerIcon.innerHTML = '☰';
-                }
-            } else {
-                // For external links like FAQ.html, Login.html
-                setActiveLink(link);
-                if (isMobileMenuOpen && mobileMenuPanel) {
-                    mobileMenuPanel.classList.remove('active');
-                    burgerMenu.setAttribute('aria-expanded', 'false');
-                    burgerMenu.classList.remove('active');
-                    burgerMenu.classList.remove('is-x');
-                    document.body.style.overflow = '';
-                    isMobileMenuOpen = false;
-                    burgerIcon.innerHTML = '☰';
-                }
-            }
-        });
-    });
 
     if (navLinksContainer) {
         navLinksContainer.addEventListener('mouseleave', () => {
@@ -285,6 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
     if (burgerMenu && mobileMenuPanel) {
         burgerMenu.addEventListener('click', () => {
             if (isMobileMenuOpen) {
@@ -293,13 +239,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileMenuPanel.classList.add('active');
                 burgerMenu.setAttribute('aria-expanded', 'true');
                 burgerMenu.classList.add('active');
-                burgerMenu.classList.add('is-x');
-                document.body.style.overflow = 'hidden';
+                document.body.style.overflow = 'hidden'; // Lock scrolling
+                document.documentElement.style.overflow = 'hidden'; // Lock html scrolling
                 isMobileMenuOpen = true;
-                burgerIcon.innerHTML = '✕';
+            }
+        });
+
+        // Close on outside click (background click)
+        mobileMenuPanel.addEventListener('click', (e) => {
+            if (e.target === mobileMenuPanel) {
+                closeMobileMenu();
             }
         });
     }
+
     if (closeMenu && mobileMenuPanel) {
         closeMenu.addEventListener('click', () => {
             closeMobileMenu();
@@ -406,32 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- Pricing Functionality ---
-    const pricingCards = document.querySelectorAll('.pricing-card');
-    pricingCards.forEach(card => {
-        const checkboxes = card.querySelectorAll('.feature-checkbox');
-        const priceValueElement = card.querySelector('.price-value');
-        const basePriceElement = card.querySelector('.price');
 
-        if (!priceValueElement || !basePriceElement) return;
-
-        const basePrice = parseInt(basePriceElement.getAttribute('data-base-price') || '0');
-
-        function updatePrice() {
-            let additionalCost = 0;
-            checkboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    additionalCost += parseInt(checkbox.getAttribute('data-price') || '0');
-                }
-            });
-            priceValueElement.textContent = basePrice + additionalCost;
-        }
-
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', updatePrice);
-        });
-        updatePrice(); // Initial price calculation
-    });
 
 
 
@@ -555,28 +483,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // Enhanced footer interactions
 document.addEventListener('DOMContentLoaded', function () {
     const footer = document.querySelector('.footer');
-    const brandText = document.querySelector('.brand-text');
-    const emailWrapper = document.querySelector('.footer-links');
-    const emailLink = document.querySelector('.email-link');
-
-    // Intersection Observer for footer animation
-    const footerObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animation = 'fadeInUp 1s ease-out';
-                if (brandText) brandText.style.animationDelay = '0.3s';
-                if (emailWrapper) emailWrapper.style.animationDelay = '0.6s';
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-
-    if (footer) {
-        footerObserver.observe(footer);
-    }
-
-
 
     // Parallax effect for footer background
     window.addEventListener('scroll', function () {
@@ -628,6 +534,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Custom cursor functionality
     function initPortfolioCursor() {
         portfolioCards.forEach(card => {
+            // Skip branding and mobile-apps cards for custom cursor
+            const category = card.getAttribute('data-category');
+            if (category === 'branding' || category === 'mobile-apps') return;
+
             card.addEventListener('mouseenter', function () {
                 portfolioCursor.classList.add('active');
             });
@@ -647,6 +557,10 @@ document.addEventListener('DOMContentLoaded', function () {
     portfolioCards.forEach((card, index) => {
         // Add click functionality
         card.addEventListener('click', function () {
+            // Disable click for branding and mobile-apps items
+            const category = this.getAttribute('data-category');
+            if (category === 'branding' || category === 'mobile-apps') return;
+
             const url = this.getAttribute('data-url');
             if (url) {
                 window.open(url, '_blank');
@@ -693,20 +607,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Prevent pricing feature checkboxes from being unchecked
-document.addEventListener('DOMContentLoaded', function () {
-    const planFeatures = document.querySelectorAll('.plan-features .feature-checkbox input[type="checkbox"]');
 
-    planFeatures.forEach(checkbox => {
-        checkbox.addEventListener('click', function (e) {
-            // Prevent unchecking - always keep it checked
-            if (!this.checked) {
-                e.preventDefault();
-                this.checked = true;
-            }
-        });
-    });
-});
 
 // Futuristic Custom Cursor
 document.addEventListener('DOMContentLoaded', () => {
@@ -751,4 +652,50 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+});
+
+// --- Service Cards & FAQ Spotlight Effect ---
+document.addEventListener('DOMContentLoaded', () => {
+    const spotlightCards = document.querySelectorAll('.service-card, .faq-item');
+    spotlightCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+});
+
+// --- Infinite Strip Animation (Pixel-Perfect Loop) ---
+document.addEventListener('DOMContentLoaded', () => {
+    const tracks = document.querySelectorAll('.strip-track');
+    const speed = 1; // pixels per frame (constant velocity)
+
+    tracks.forEach(track => {
+        // Calculate the width of exactly one content set (first span)
+        const firstSpan = track.querySelector('span');
+        if (!firstSpan) return;
+
+        // Get computed width of one content unit
+        const spanWidth = firstSpan.offsetWidth;
+
+        let position = 0;
+
+        function animate() {
+            position -= speed;
+
+            // When we've moved exactly one span width, reset to 0
+            // This is invisible because the second span is now in exactly the same position
+            if (position <= -spanWidth) {
+                position = 0;
+            }
+
+            track.style.transform = `translateX(${position}px)`;
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    });
 });

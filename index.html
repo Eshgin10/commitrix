@@ -58,13 +58,7 @@
 </head>
 
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loading-content">
-            <h1 class="loading-title">Commitrix</h1>
-            <p class="loading-subtitle">Solo web design agency</p>
-        </div>
-    </div>
+
 
     <header>
         <nav class="nav-container">
@@ -76,16 +70,16 @@
             <div class="nav-links" id="main-nav">
                 <div class="nav-indicator"></div>
                 <a href="#home" data-page="home" aria-label="Home">Home</a>
-                <a href="#story" data-page="story" aria-label="Story">Process</a>
-                <a href="#portfolio" data-page="story" aria-label="Story">Portfolio</a>
-                <a href="#benefits" data-page="benefits" aria-label="Benefits">Benefits</a>
+                <a href="#services" data-page="services" aria-label="Services">Services</a>
+                <a href="#portfolio" data-page="portfolio" aria-label="Portfolio">Portfolio</a>
                 <a href="#pricing" data-page="pricing" aria-label="Pricing">Pricing</a>
+                <a href="#benefits" data-page="benefits" aria-label="Benefits">Benefits</a>
+                <a href="#story" data-page="process" aria-label="Process">Process</a>
                 <a href="#faq" data-page="faq" aria-label="FAQ">FAQ</a>
             </div>
 
             <div class="nav-cta-buttons">
-                <a href="https://x.com/Commitrix" class="cta-btn dm-btn"
-                    target="_blank" aria-label="DM on X">
+                <a href="https://x.com/Eshg1n0" class="cta-btn dm-btn" target="_blank" aria-label="DM on X">
                     DM on
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                         <path
@@ -94,8 +88,10 @@
                 </a>
                 <a href="https://calendly.com/eshgin-commitrix/15-minute-discussing" class="cta-btn book-btn"
                     target="_blank" aria-label="Book a call">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                     </svg>
                     Book a call
                 </a>
@@ -103,30 +99,40 @@
 
             <button class="burger-menu" aria-label="Toggle mobile menu" aria-expanded="false"
                 aria-controls="mobile-nav-links-list">
-                <span id="burgerIcon">☰</span>
+                <div class="burger-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </button>
         </nav>
 
+
         <div class="mobile-menu" id="mobile-menu-panel">
-            <div class="mobile-nav-links" id="mobile-nav-links-list">
-                <a href="#home" data-page="home" aria-label="Home">Home</a>
-                <a href="#process" data-page="work" aria-label="Work">Work</a>
-                <a href="#story" data-page="story" aria-label="Story">Process</a>
-                <a href="#portfolio" data-page="story" aria-label="Story">Portfolio</a>
-                <a href="#benefits" data-page="benefits" aria-label="Benefits">Benefits</a>
-                <a href="#pricing" data-page="pricing" aria-label="Pricing">Pricing</a>
-                <a href="#faq" data-page="faq" aria-label="FAQ">FAQ</a>
-                <!-- <a href="Login.html" data-page="login" aria-label="Log in">Log in</a> -->
+            <button class="close-menu" aria-label="Close menu">✕</button>
+
+            <div class="mobile-menu-content">
+                <div class="mobile-nav-links" id="mobile-nav-links-list">
+                    <a href="#home" data-page="home" aria-label="Home">Home</a>
+                    <a href="#services" data-page="services" aria-label="Services">Services</a>
+                    <a href="#portfolio" data-page="portfolio" aria-label="Portfolio">Portfolio</a>
+                    <a href="#pricing" data-page="pricing" aria-label="Pricing">Pricing</a>
+                    <a href="#benefits" data-page="benefits" aria-label="Benefits">Benefits</a>
+                    <a href="#story" data-page="process" aria-label="Process">Process</a>
+                    <a href="#faq" data-page="faq" aria-label="FAQ">FAQ</a>
+                </div>
+            </div>
+
+            <div class="mobile-menu-bottom">
+                <!-- Primary Action Area -->
             </div>
         </div>
     </header>
 
     <section class="hero" id="home">
-        <span class="section-badge">Available for New Projects</span>
-        <h1>Launch-Ready Landing Pages for <span class="accent-text">Your AI or SaaS Product</span></h1>
-        <p>I design high-converting landing pages that turn visitors into customers. Whether you're launching an AI
-            tool, SaaS product, or a Startup, I'll create a website that clearly communicates your value and drives
-            results
+        <span class="section-badge">7-Day Free Trial Is Available</span>
+        <h1>Design & Development Services<span class="accent-text">For Your AI or SaaS Company</span></h1>
+        <p>Managing your digital presence shouldn't slow you down. Let us accelarate your business
         </p>
         <div class="hero-actions">
             <a href="#pricing" class="action-btn primary" aria-label="Check Prices">Check Prices</a>
@@ -147,24 +153,538 @@
     <section class="logo-slider">
         <div class="strip-container">
             <div class="strip straight">
-                <div class="strip-track">
-                    <span>Landing page • Web design • React Development • </span>
-                    <span>Landing page • Web design • React Development • </span>
-                    <span>Landing page • Web design • React Development • </span>
-                    <span>Landing page • Web design • React Development • </span>
+                <div class="strip-track" id="strip-track-1">
+                    <span>Monthly Subscription for All your Design &amp; Development Services</span>
+                    <span>Monthly Subscription for All your Design &amp; Development Services</span>
                 </div>
             </div>
             <div class="strip angled">
-                <div class="strip-track">
-                    <span>Responsive • Fast Delivery • High Quality • </span>
-                    <span>Responsive • Fast Delivery • High Quality • </span>
-                    <span>Responsive • Fast Delivery • High Quality • </span>
-                    <span>Responsive • Fast Delivery • High Quality • </span>
+                <div class="strip-track" id="strip-track-2">
+                    <span>Monthly Subscription for All your Design &amp; Development Services</span>
+                    <span>Monthly Subscription for All your Design &amp; Development Services</span>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-badge">Services</div>
+            <!-- Done-For-You Services Group -->
+            <div class="services-group dfy-group">
+                <h3 class="group-title">
+                    <div class="title-wrapper">Done For You Services</div>
+                    <div class="group-desc">End-to-end delivery where we do the entire process from concept to a
+                        production-ready product.</div>
+                </h3>
+                <div class="services-grid">
+                    <!-- Web Design & Development -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                                <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                                <path d="m10 13-2 2 2 2" />
+                                <path d="m14 17 2-2-2-2" />
+                            </svg>
+                        </div>
+                        <h3>Web Design & Development</h3>
+                        <p>Custom, high-performance websites built with modern technologies and a focus on scalability.
+                        </p>
+                    </div>
+
+                    <!-- Landing Page Creation -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 3h18v18H3z" />
+                                <path d="M3 9h18" />
+                                <path d="M9 21V9" />
+                                <path d="m7 5 1 1-1 1" />
+                                <path d="m11 5 1 1-1 1" />
+                            </svg>
+                        </div>
+                        <h3>Landing Page Creation</h3>
+                        <p>Conversion-optimized landing pages designed to turn your visitors into loyal customers.</p>
+                    </div>
+
+                    <!-- Web Application Development -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3" />
+                                <path d="M21 16v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3" />
+                                <rect width="20" height="8" x="2" y="8" rx="2" />
+                                <path d="M7 12h.01" />
+                                <path d="M11 12h.01" />
+                                <path d="M15 12h.01" />
+                            </svg>
+                        </div>
+                        <h3>Web Application Development</h3>
+                        <p>Complex, feature-rich web applications with intuitive user flows and robust backends.</p>
+                    </div>
+
+                    <!-- Mobile App Design & Development -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                                <path d="M12 18h.01" />
+                                <path d="M9 14h6" />
+                                <path d="M9 10h6" />
+                                <path d="M9 6h6" />
+                            </svg>
+                        </div>
+                        <h3>Mobile App Design & Development</h3>
+                        <p>Beautiful, native-feeling mobile experiences for iOS and Android that engage users on the go.
+                        </p>
+                    </div>
+
+                    <!-- MVP Development -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                                <path
+                                    d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                                <path d="M9 12H4s.5-1 1-4c1.5 0 3 .5 3 .5L9 12Z" />
+                                <path d="M12 15v5s1-.5 4-1c0-1.5-.5-3-.5-3L12 15Z" />
+                            </svg>
+                        </div>
+                        <h3>MVP Development (SaaS)</h3>
+                        <p>Bringing your SaaS idea to market fast with a robust MVP that validates your vision.</p>
+                    </div>
+
+                    <!-- Brand Identity Design -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m12 19 7-7 3 3-7 7-3-3z" />
+                                <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                                <path d="m2 2 5 2.5" />
+                                <path d="m2 2 2.5 5" />
+                                <path d="m9.28 9.28 1.83 1.83" />
+                                <path d="m14.5 19-3.5-3.5" />
+                            </svg>
+                        </div>
+                        <h3>Brand Identity Design</h3>
+                        <p>Visual storytelling through logos, typography, and cohesive design systems that define your
+                            brand.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Consulting Services Group -->
+            <div class="services-group consulting-group">
+                <h3 class="group-title">
+                    <div class="title-wrapper">Consulting Services</div>
+                    <div class="group-desc">Guiding you through the process of building your own product showing tools
+                        and strategies that we use.</div>
+                </h3>
+                <div class="services-grid">
+                    <!-- Light level Vibe coding -->
+                    <div class="service-card">
+                        <div class="service-icon dual-icons">
+                            <img src="https://lovable.dev/favicon.ico" alt="Lovable" class="app-icon">
+                            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/replit-icon.png"
+                                alt="Replit" class="app-icon">
+                        </div>
+                        <h3>Light level Vibe coding</h3>
+                        <p>Expert guidance on using tools like Lovable, Bolt, V0 and Replit to build applications at
+                            lightning speeds with
+                            AI. Can be used for MVP develoment and idea validation.
+                        </p>
+                    </div>
+
+                    <!-- Hard-Core vibe coding -->
+                    <div class="service-card">
+                        <div class="service-icon dual-icons">
+                            <img src="https://cursor.com/favicon.ico" alt="Cursor" class="app-icon">
+                            <img src="img/antigravity.png" alt="Antigravity" class="app-icon">
+                        </div>
+                        <h3>Hard-Core vibe coding</h3>
+                        <p>Deep dive into Cursor and agentic workflows to handle complex architectures and legacy code.
+                            Can be used for large scale projects and for production level applications.
+                        </p>
+                    </div>
+
+                    <!-- Deployment Workflows -->
+                    <div class="service-card">
+                        <div class="service-icon dual-icons">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                                alt="Github" class="app-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="app-icon">
+                                <polyline points="4 17 10 11 4 5" />
+                                <line x1="12" y1="19" x2="20" y2="19" />
+                            </svg>
+                        </div>
+                        <h3>Deployment Workflows</h3>
+                        <p>Help with github and terminal for non-technical founders, showing you how to deploy and
+                            manage your applications.
+                        </p>
+                    </div>
+
+                    <!-- DataBase Management -->
+                    <div class="service-card">
+                        <div class="service-icon dual-icons">
+                            <img src="https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png"
+                                alt="Firebase" class="app-icon">
+                            <img src="https://supabase.com/dashboard/img/supabase-logo.svg" alt="Supabase"
+                                class="app-icon">
+                        </div>
+                        <h3>DataBase Management</h3>
+                        <p>Teaching you how to connect your applications to databases and manage your logins and data.
+                        </p>
+                    </div>
+
+                    <!-- Using LLMs in the workflows -->
+                    <div class="service-card">
+                        <div class="service-icon dual-icons">
+                            <img src="img/gemini.png" alt="Gemini" class="app-icon">
+                            <img src="https://claude.ai/favicon.ico" alt="Claude" class="app-icon">
+                        </div>
+                        <h3>Using LLMs in Workflows</h3>
+                        <p>Integrating Gemini and Claude into your daily processes for maximum efficiency and
+                            creativity.
+                        </p>
+                    </div>
+
+                    <!-- Design Tools -->
+                    <div class="service-card">
+                        <div class="service-icon dual-icons">
+                            <img src="img/stitch.png" alt="Stitch" class="app-icon">
+                            <img src="img/relume.png" alt="Relume" class="app-icon">
+                        </div>
+                        <h3>Design Tools</h3>
+                        <p>Mastering modern design systems with Stitch and Relume to bridge the gap between design and
+                            code.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <div class="section-badge">Latest Work</div>
+
+            <div class="portfolio-filters">
+                <div class="filter-indicator"></div>
+                <button class="filter-btn active" data-filter="branding">Branding</button>
+                <button class="filter-btn" data-filter="web-design">Web Design</button>
+                <button class="filter-btn" data-filter="mvp">MVP Development</button>
+                <button class="filter-btn" data-filter="mobile-apps">Mobile Apps</button>
+            </div>
+
+            <div class="mobile-filter-dropdown">
+                <select id="portfolio-category-select" aria-label="Select portfolio category">
+                    <option value="branding">Branding</option>
+                    <option value="web-design">Web Design</option>
+                    <option value="mvp">MVP Development</option>
+                    <option value="mobile-apps">Mobile Apps</option>
+                </select>
+                <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                </svg>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-card aspect-16-9" data-url="https://aura-nft-art-display.lovable.app"
+                    data-category="web-design">
+                    <div class="card-image">
+                        <img src="img/work1.png" alt="Modern NFT Website">
+                    </div>
+                </div>
+
+                <div class="portfolio-card aspect-16-9" data-url="https://eshgin10.github.io/CodeFlow/"
+                    data-category="web-design">
+                    <div class="card-image">
+                        <img src="img/work3.png" alt="SaaS Landing Page">
+                    </div>
+                </div>
+
+                <div class="portfolio-card aspect-16-9" data-url="https://riga-rentals--finanseconomy.replit.app/auth"
+                    data-category="mvp">
+                    <div class="card-image">
+                        <img src="img/mvp1.jpg" alt="Student Dashboard App">
+                    </div>
+                </div>
+
+                <div class="portfolio-card aspect-16-9" data-url="https://eshgin10.github.io/F1-Waitlist/"
+                    data-category="web-design">
+                    <div class="card-image">
+                        <img src="img/work5.png" alt="F1-Waitlist">
+                    </div>
+                </div>
+
+                <div class="portfolio-card aspect-16-9" data-url="https://scanx-732251611948.us-west1.run.app/"
+                    data-category="mvp">
+                    <div class="card-image">
+                        <img src="img/mvp2.png" alt="ScanX Conversion Audit">
+                    </div>
+                </div>
+
+
+
+                <div class="portfolio-card aspect-16-9" data-url="https://eshgin10.github.io/Horizon-Waitlist/"
+                    data-category="web-design">
+                    <div class="card-image">
+                        <img src="img/work7.png" alt="Horizon Waitlist">
+                    </div>
+                </div>
+
+                <div class="portfolio-card aspect-16-9" data-url="https://eshgin10.github.io/Fintech/"
+                    data-category="web-design">
+                    <div class="card-image">
+                        <img src="img/work6.png" alt="Intelligent Finance Website">
+                    </div>
+                </div>
+
+                <div class="portfolio-card aspect-16-9"
+                    data-url="https://preview--aether-genesis-site-spark.lovable.app/" data-category="web-design">
+                    <div class="card-image">
+                        <img src="img/work9.png" alt="Aether Robotics">
+                    </div>
+                </div>
+
+                <div class="portfolio-card aspect-16-9" data-url="https://devspark-nexus.lovable.app/"
+                    data-category="web-design">
+                    <div class="card-image">
+                        <img src="img/work2.png" alt="Programming Course">
+                    </div>
+                </div>
+
+                <div class="portfolio-card aspect-16-9" data-url="https://eshgin10.github.io/Cortex/"
+                    data-category="web-design">
+                    <div class="card-image">
+                        <img src="img/work8.png" alt="Cortex AI Website">
+                    </div>
+                </div>
+
+
+                <div class="portfolio-card" data-url="#" data-category="branding">
+                    <div class="card-image">
+                        <img src="img/branding1.jpg" alt="Modern Logo Design">
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-url="#" data-category="branding">
+                    <div class="card-image">
+                        <img src="img/branding2.jpg" alt="Brand Identity System">
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-url="#" data-category="branding">
+                    <div class="card-image">
+                        <img src="img/branding3.jpg" alt="Book Design Concept">
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-url="#" data-category="branding">
+                    <div class="card-image">
+                        <img src="img/branding4.jpg" alt="Corporate ID Design">
+                    </div>
+                </div>
+
+                <div class="portfolio-card aspect-16-9" data-url="#" data-category="branding">
+                    <div class="card-image">
+                        <img src="img/branding5.png" alt="University Branding">
+                    </div>
+                </div>
+
+                <div class="portfolio-card aspect-16-9" data-url="#" data-category="branding">
+                    <div class="card-image">
+                        <img src="img/branding6.png" alt="Brand Guidelines & Assets">
+                    </div>
+                </div>
+
+                <div class="portfolio-card mobile-app-card" data-url="#" data-category="mobile-apps">
+                    <div class="card-image">
+                        <img src="img/mobile1.jpg" alt="Mobile App UI 1">
+                    </div>
+                </div>
+                <div class="portfolio-card mobile-app-card" data-url="#" data-category="mobile-apps">
+                    <div class="card-image">
+                        <img src="img/mobile2.jpg" alt="Mobile App UI 2">
+                    </div>
+                </div>
+                <div class="portfolio-card mobile-app-card" data-url="#" data-category="mobile-apps">
+                    <div class="card-image">
+                        <img src="img/mobile3.jpg" alt="Mobile App UI 3">
+                    </div>
+                </div>
+                <div class="portfolio-card mobile-app-card" data-url="#" data-category="mobile-apps">
+                    <div class="card-image">
+                        <img src="img/mobile4.jpg" alt="Mobile App UI 4">
+                    </div>
+                </div>
+                <div class="portfolio-card mobile-app-card" data-url="#" data-category="mobile-apps">
+                    <div class="card-image">
+                        <img src="img/mobile5.jpg" alt="Mobile App UI 5">
+                    </div>
+                </div>
+                <div class="portfolio-card mobile-app-card" data-url="#" data-category="mobile-apps">
+                    <div class="card-image">
+                        <img src="img/mobile6.jpg" alt="Mobile App UI 6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Portfolio Cursor -->
+    <div class="portfolio-cursor" id="portfolioCursor">
+        <span class="portfolio-cursor-text">VIEW SITE</span>
+        <svg class="portfolio-cursor-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 17L17 7M17 7H7M17 7V17" />
+        </svg>
+    </div>
+
+    <section class="pricing" id="pricing">
+        <span class="section-badge">Pricing Plans</span>
+        <div class="pricing-cards">
+
+
+            <!-- Card 1: Strategy & Consulting -->
+            <div class="pricing-card">
+
+                <div class="card-header">
+                    <h3 class="plan-title">Strategy & Consulting</h3>
+                    <p class="plan-subtitle">Get expert guidance on every call. Learn the tools. Build your solutions.
+                        Execute your strategy with confidence.</p>
+                </div>
+                <div class="card-pricing">
+                    <div class="price-wrapper">
+                        <span class="price-value">$1199</span><span class="period">/month</span>
+                    </div>
+                    <p class="billing-info">Billed monthly • Cancel anytime</p>
+                </div>
+                <a href="https://buy.stripe.com/5kQfZiadHcN9e9dfoa8N202" class="cta-btn dm-btn" target="_blank">Start
+                    7-Day Free Trial</a>
+
+                <div class="included-section">
+                    <h4>What you'll get each month</h4>
+                    <ul class="features-list">
+                        <li><span class="check">✓</span> 8 Monthly Strategy Sessions (60 min each)</li>
+                        <li><span class="check">✓</span> 24/7 Chat Support</li>
+                        <li><span class="check">✓</span> Tool Selection & Setup Guidance</li>
+                        <li><span class="check">✓</span> Explaining Tools and Showing Workflow</li>
+                        <li><span class="check">✓</span> Implementation and Roadmap</li>
+                        <li><span class="check">✓</span> Best Practices & Optimization Tips</li>
+                        <li><span class="check">✓</span> Tearing Down The Goal To Steps</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2: Done-For-You Building -->
+            <div class="pricing-card">
+
+                <div class="card-header">
+                    <h3 class="plan-title">Done-For-You Building</h3>
+                    <p class="plan-subtitle">You tell us what you need. We design, build, and deliver—no learning curve,
+                        no execution headaches. Just results.</p>
+                </div>
+                <div class="card-pricing">
+                    <div class="price-wrapper">
+                        <span class="price-value">$2,799</span><span class="period">/month</span>
+                    </div>
+                    <p class="billing-info">Billed monthly • Cancel anytime</p>
+                </div>
+                <a href="https://buy.stripe.com/28EeVeetX7sPe9d1xk8N203" class="cta-btn book-btn" target="_blank">Start
+                    7-Day Free Trial</a>
+
+                <div class="included-section">
+                    <h4>What you'll get each month</h4>
+                    <ul class="features-list">
+                        <li><span class="check">✓</span> 1 active request at a time</li>
+                        <li><span class="check">✓</span> Fast delivery</li>
+                        <li><span class="check">✓</span> Full-service digital development & design</li>
+                        <li><span class="check">✓</span> Maintanance for the project</li>
+                        <li><span class="check">✓</span> Ready to use results</li>
+                        <li><span class="check">✓</span> Communication through Slack</li>
+                        <li><span class="check">✓</span> Unlimited revisions on deliverables</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <div class="section-badge">Why Choose Commitrix</div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <h3>Fast turnaround time</h3>
+                    <p>Your site delivered in record time. We prioritize efficiency to help you launch faster without
+                        ever cutting corners on excellence.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3>Development in Code</h3>
+                    <p>Pure, optimized code for peak performance. No bloat, no builders—just clean architecture built to
+                        scale with your ambition.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                            <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                            <path d="m2 2 5 2.5" />
+                            <path d="m2 2 2.5 5" />
+                            <path d="m9.28 9.28 1.83 1.83" />
+                            <path d="m14.5 19-3.5-3.5" />
+                        </svg>
+                    </div>
+                    <h3>Custom Design</h3>
+                    <p>Bespoke visuals that define your brand. We create unique, high-end designs tailored specifically
+                        to your vision and market position.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>Excellence in every detail. From smooth animations to robust functionality, we deliver a
+                        sophisticated experience that lasts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="story" id="story">
         <span class="section-badge">Process</span>
@@ -186,8 +706,8 @@
                     <div class="content">
                         <h2>Become a Commitrix customer</h2>
                         <p>Complete the payment and become a Commitrix customer. If you have questions about the
-                            services I
-                            offer, don't hesitate to book a call. Once you become customer, I will send you an
+                            services we
+                            offer, don't hesitate to book a call. Once you become customer, we will send you an
                             email with necessary information about how we will continue the project.</p>
                         <a href="https://calendly.com/eshgin-commitrix/15-minute-discussing" class="learn-more"
                             target="_blank">Book a call<span class="arrow">→</span></a>
@@ -205,8 +725,9 @@
                     </div>
                     <div class="content">
                         <h2>Deliver your idea</h2>
-                        <p>Once your purchase is complete, I'll promptly add you to Slack. At that point, I'll need
-                            some details from you about the type of website you're looking to create.</p>
+                        <p>Once your purchase is complete, we'll promptly add you to Slack. At that point, we'll need
+                            some details from you about the type of project you're looking to create. From now on you
+                            can request a new project as soon as we complete the old one. </p>
                     </div>
                 </div>
                 <div class="timeline-item" data-index="2">
@@ -219,9 +740,8 @@
                     </div>
                     <div class="content">
                         <h2>Design & Development</h2>
-                        <p>I design your website according to your needs. I avoid any unnecessary animations and fancy
-                            illustrations and focus on delivering your message in a clean and simple way. Then I
-                            develop it as quickly as possible.
+                        <p>We will design and develop the application as per your requirements. You can ask for
+                            revisions as many times as you want. We will work on the product until you are satisfied.
                         </p>
                         <a href="#portfolio" class="learn-more">See example work <span class="arrow">→</span></a>
                     </div>
@@ -236,7 +756,8 @@
                     </div>
                     <div class="content">
                         <h2>Deployment</h2>
-                        <p>I deploy your website for you. I will ensure that it is secure, fast, and up-to-date.
+                        <p>When you think product is perfect we will deploy and maintain it for you. You can ask for any
+                            fixes or improvements as long as your subscription is active.
                         </p>
                     </div>
                 </div>
@@ -244,260 +765,50 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio-section" id="portfolio">
-        <div class="container">
-            <div class="section-badge">Latest Work</div>
-
-            <div class="portfolio-grid">
-                <div class="portfolio-card" data-url="https://aura-nft-art-display.lovable.app">
-                    <div class="card-image">
-                        <img src="img/work1.png" alt="Modern NFT Website">
-                    </div>
-                </div>
-
-                <div class="portfolio-card" data-url="https://eshgin10.github.io/CodeFlow/">
-                    <div class="card-image">
-                        <img src="img/work3.png" alt="SaaS Landing Page">
-                    </div>
-                </div>
-
-                <div class="portfolio-card" data-url="https://eshgin10.github.io/Cortex/">
-                    <div class="card-image">
-                        <img src="img/work8.png" alt="Cortex AI Website">
-                    </div>
-                </div>
-
-                <div class="portfolio-card" data-url="https://eshgin10.github.io/F1-Waitlist/">
-                    <div class="card-image">
-                        <img src="img/work5.png" alt="F1-Waitlist">
-                    </div>
-                </div>
-
-                <div class="portfolio-card" data-url="https://devspark-nexus.lovable.app/">
-                    <div class="card-image">
-                        <img src="img/work2.png" alt="Programming Course">
-                    </div>
-                </div>
-
-
-
-                <div class="portfolio-card" data-url="https://eshgin10.github.io/Horizon-Waitlist/">
-                    <div class="card-image">
-                        <img src="img/work7.png" alt="Horizon Waitlist">
-                    </div>
-                </div>
-
-                <div class="portfolio-card" data-url="https://eshgin10.github.io/Fintech/">
-                    <div class="card-image">
-                        <img src="img/work6.png" alt="Intelligent Finance Website">
-                    </div>
-                </div>
-
-
-                <div class="portfolio-card" data-url="https://preview--aether-genesis-site-spark.lovable.app/">
-                    <div class="card-image">
-                        <img src="img/work9.png" alt="Aether Robotics">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Custom Portfolio Cursor -->
-    <div class="portfolio-cursor" id="portfolioCursor">
-        <span class="portfolio-cursor-text">VIEW SITE</span>
-        <svg class="portfolio-cursor-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M7 17L17 7M17 7H7M17 7V17" />
-        </svg>
-    </div>
-
-    <!-- Benefits Section -->
-    <section class="benefits-section" id="benefits">
-        <div class="container">
-            <div class="section-badge">Why Choose Commitrix</div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2769/2769339.png" alt="Fast Delivery"
-                            width="48" height="48">
-                    </div>
-                    <h3>Fast Delivery</h3>
-                    <p>Get your website delivered within 1 week without compromising on quality.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1336/1336494.png" alt="Development in Code"
-                            width="48" height="48">
-                    </div>
-                    <h3>Development in Code</h3>
-                    <p>Hand-coded websites built with clean, maintainable code for optimal performance.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png" alt="Custom Design"
-                            width="48" height="48">
-                    </div>
-                    <h3>Custom Design</h3>
-                    <p>Unique designs tailored to your brand and business needs.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3588/3588314.png" alt="High Conversion"
-                            width="48" height="48">
-                    </div>
-                    <h3>High Conversion</h3>
-                    <p>Strategically designed to turn visitors into customers and maximize results.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="pricing" id="pricing">
-        <span class="section-badge">Pricing Plans</span>
-        <div class="pricing-cards">
-
-
-            <div class="pricing-card featured">
-                <div class="discount-banner">50% off for early customers</div>
-                <div class="card-header">
-                    <h3 class="plan-title">Landing Page Design</h3>
-                    <p class="plan-subtitle">Complete end-to-end solution</p>
-                </div>
-                <div class="card-pricing">
-                    <div class="price-wrapper">
-                        <span class="original-price">$2999</span>
-                        <span class="discounted-price">$1499</span>
-                    </div>
-                    <p class="billing-info">One-time payment</p>
-                </div>
-                <ul class="features-list">
-                    <li><span class="check">✓</span> 1 page website (up to 12 sections)</li>
-                    <li><span class="check">✓</span> Custom design</li>
-                    <li><span class="check">✓</span> React development</li>
-                    <li><span class="check">✓</span> Couple of revisions</li>
-                    <li><span class="check">✓</span> Mobile optimization</li>
-                </ul>
-                <a href="https://buy.stripe.com/9B67sM85z3cz7KP8ZM8N201" class="cta-button" target="_blank">Get
-                    started</a>
-            </div>
-
-            <div class="pricing-card">
-                <div class="card-header">
-                    <h3 class="plan-title">Need Something Specific?</h3>
-                    <p class="plan-subtitle">Tailored to your needs</p>
-                </div>
-                <div class="card-pricing">
-                    <div class="price">Custom</div>
-                    <p class="billing-info">Contact for pricing</p>
-                </div>
-                <ul class="features-list">
-                    <li><span class="check">✓</span> Offer Your Price</li>
-                    <li><span class="check">✓</span> Multiple pages</li>
-                    <li><span class="check">✓</span> Advanced features</li>
-                    <li><span class="check">✓</span> Priority support</li>
-                    <li><span class="check">✓</span> Unlimited revisions</li>
-                </ul>
-                <a href="https://calendly.com/eshgin-commitrix/15-minute-discussing" class="cta-button"
-                    target="_blank">Get started</a>
-            </div>
-        </div>
-
-
-
-        <!-- <div class="pricing-cards">
-             <div class="pricing-card">
-                  <h3 class="plan-name">Beginner</h3>
-                  <p class="price" data-base-price="100"><span class="price-value">100</span>$<span class="period">/month</span></p>
-                  <ul class="features-list">
-                        <li>1 project request</li>
-                        <li>Content changes, additions</li>
-                        <li class="option-header">You can add:</li>
-                        <li>
-                            <input type="checkbox" class="feature-checkbox" name="beginner-option" id="beginner-email" data-price="150">
-                            <label for="beginner-email">Email list integration - $150</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="feature-checkbox" name="beginner-option" id="beginner-payment" data-price="200">
-                            <label for="beginner-payment">Payment system - $200</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="feature-checkbox" name="beginner-option" id="beginner-analytics" data-price="120">
-                            <label for="beginner-analytics">Analytics dashboard - $120</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="feature-checkbox" name="beginner-option" id="beginner-chatbot" data-price="180">
-                            <label for="beginner-chatbot">Chatbot for users - $180</label>
-                        </li>
-                  </ul>
-                  <button class="action-btn primary">Get Started</button>
-            </div>
-            <div class="pricing-card">
-                  <h3 class="plan-name">Premium</h3>
-                  <p class="price" data-base-price="200"><span class="price-value">200</span>$<span class="period">/month</span></p>
-                  <ul class="features-list">
-                        <li>3 project requests</li>
-                        <li>Content changes, additions</li>
-                        <li class="option-header">You can add:</li>
-                        <li>
-                            <input type="checkbox" class="feature-checkbox" name="premium-option" id="premium-email" data-price="150">
-                            <label for="premium-email">Email list integration - $150</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="feature-checkbox" name="premium-option" id="premium-payment" data-price="200">
-                            <label for="premium-payment">Payment system - $200</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="feature-checkbox" name="premium-option" id="premium-analytics" data-price="120">
-                            <label for="premium-analytics">Analytics dashboard - $120</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="feature-checkbox" name="premium-option" id="premium-chatbot" data-price="180">
-                            <label for="premium-chatbot">Chatbot for users - $180</label>
-                        </li>
-                  </ul>
-                  <button class="action-btn primary">Get Started</button>
-            </div>
-            <div class="pricing-card recommended">
-                  <div class="recommended-badge">Best Value</div>
-                  <h3 class="plan-name">Matrix</h3> b
-                  <p class="price" data-base-price="300"><span class="price-value">300</span>$<span class="period">/month</span></p>
-                  <ul class="features-list">
-                        <li>5 project requests</li>
-                        <li>Content changes, additions</li>
-                        <li class="option-header">You can add:</li>
-                        <li>
-                            <input type="checkbox" class="feature-checkbox" name="matrix-option" id="matrix-email" data-price="150">
-                            <label for="matrix-email">Email list integration - $150</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="feature-checkbox" name="matrix-option" id="matrix-payment" data-price="200">
-                            <label for="matrix-payment">Payment system - $200</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="feature-checkbox" name="matrix-option" id="matrix-analytics" data-price="120">
-                            <label for="matrix-analytics">Analytics dashboard - $120</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="feature-checkbox" name="matrix-option" id="matrix-chatbot" data-price="180">
-                            <label for="matrix-chatbot">Chatbot for users - $180</label>
-                        </li>
-                  </ul>
-                  <button class="action-btn primary">Get Started</button>
-            </div>
-        </div> -->
-    </section>
-
     <section class="faq" id="faq">
         <span class="section-badge">Frequently Asked Questions</span>
         <div class="faq-container">
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>What services do you offer?</h3>
+                    <h3>Can I cancel my subscription at any time?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>For now Commitrix only offers web design service including front-end development.</p>
+                    <p>Yes, you can cancel your subscription at any time with no long-term commitment.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What kind of work can I request?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>You can request any of the services listed in our Services section. Commitrix exclusively focused
+                        on these areas to ensure the highest quality results.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Are there any refunds?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No, we do not offer refunds. However, a 7-day free trial is currently available for both
+                        Commitrix packages, so you can try our service and only pay if you're satisfied with the
+                        workflow.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What happens if I cancel mid-month?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>If you cancel in the middle of a billing period, you will retain the right to make requests for
+                        the remaining time you've already paid for.</p>
                 </div>
             </div>
 
@@ -507,33 +818,8 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Project timelines vary depending on complexity, but most landing pages are delivered within 1
-                        week.
-                        I prioritize speed without compromising quality.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Is there any refunds?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>No, I do not offer refunds. Once the project begins, I allocate time, resources, and expertise
-                        to deliver your custom website. To ensure transparency: If you have concerns, I'm happy to
-                        discuss them before starting. Commitrix's goal is to make sure you love your new website!</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Do You Offer Revisions?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p> Yes, I include free minor revisions like text tweaks or small styling adjustments. However,
-                        major changes such as redesigning entire sections, restructuring layouts after approval, or
-                        adding new features beyond the original scope aren't coverede.</p>
+                    <p>Timelines depend on the complexity of the project, but we ensure transparency by providing
+                        updates every 48 hours for every project.</p>
                 </div>
             </div>
         </div>
@@ -544,21 +830,31 @@
             <div class="cta-card">
                 <div class="cta-content">
                     <div class="cta-text">
-                        <h2>Ready to Transform Your Ideas?</h2>
-                        <p>Schedule a free consultation call with me and discover how I can help you launch your
-                            product, course, or startup with a stunning landing page that converts.</p>
-                        <a href="https://calendly.com/eshgin-commitrix/15-minute-discussing" class="cta-button2"
-                            target="_blank">
-                            <span>Book a Call</span>
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </a>
+                        <h2>Ready to Scale Your Business?</h2>
+                        <p>Start your 7-day free trial today and experience a faster way to build and design your
+                            product. Take the first step toward a more impactful digital presence with zero risk.</p>
+                        <div class="cta-btns">
+                            <a href="#pricing" class="cta-button2">
+                                <span>Start 7-Day Free Trial</span>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </a>
+                            <a href="https://calendly.com/eshgin-commitrix/15-minute-discussing"
+                                class="cta-button2 book-btn" target="_blank">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                                <span>Book a Call</span>
+                            </a>
+                        </div>
                     </div>
                     <div class="cta-image">
                         <img src="img/matrix_phone.png" alt="CTA Image" width="300" height="auto"
-                            style="border-radius: 10px;" id="matrix-phone">
+                            style="border-radius: 12px;" id="matrix-phone">
                     </div>
                 </div>
             </div>
@@ -582,6 +878,7 @@
         </div>
     </footer>
     <script src="Home.js"></script>
+    <script src="portfolio-filter.js"></script>
 </body>
 
 </html>
