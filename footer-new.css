@@ -68,11 +68,11 @@
 }
 
 .brand-text {
-    font-size: clamp(5rem, 20vw, 35rem);
+    font-size: clamp(3rem, 18vw, 35rem);
     font-weight: 900;
     color: var(--accent-color);
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
     letter-spacing: -0.02em;
     line-height: 0.8;
     text-transform: uppercase;
@@ -83,7 +83,8 @@
     background-clip: text;
     white-space: nowrap;
     text-align: center;
-    max-width: 100%;
+    width: 100%;
+    max-width: 100vw;
     overflow: hidden;
 }
 
