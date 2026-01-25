@@ -68,21 +68,56 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Mobile Dropdown Logic
-        const mobileSelect = document.getElementById('portfolio-category-select');
-        if (mobileSelect) {
-            mobileSelect.addEventListener('change', (e) => {
-                const selectedCategory = e.target.value;
-                // Sync with buttons
-                const targetBtn = document.querySelector(`.filter-btn[data-filter="${selectedCategory}"]`);
-                if (targetBtn) {
-                    targetBtn.click(); // Reuse existing click logic
+        // Mobile Custom Dropdown Logic
+        const dropdown = document.getElementById('mobile-portfolio-dropdown');
+        if (dropdown) {
+            const header = dropdown.querySelector('.dropdown-header');
+            const selectedText = dropdown.querySelector('.selected-text');
+            const options = dropdown.querySelectorAll('.dropdown-option');
+
+            // Toggle Dropdown
+            header.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('open');
+            });
+
+            // Handle Option Selection
+            options.forEach(option => {
+                option.addEventListener('click', (e) => {
+                    const value = option.getAttribute('data-value');
+                    const text = option.textContent;
+
+                    // Update UI
+                    selectedText.textContent = text;
+                    dropdown.classList.remove('open');
+
+                    // Update Selected State
+                    options.forEach(opt => opt.removeAttribute('data-selected'));
+                    option.setAttribute('data-selected', 'true');
+
+                    // Trigger Filter (Sync with Desktop Buttons)
+                    const targetBtn = document.querySelector(`.filter-btn[data-filter="${value}"]`);
+                    if (targetBtn) {
+                        targetBtn.click();
+                    }
+                });
+            });
+
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
                 }
             });
 
-            // Sync initial state
+            // Sync initial state from active button
             if (activeBtn) {
-                mobileSelect.value = activeBtn.getAttribute('data-filter');
+                const initialValue = activeBtn.getAttribute('data-filter');
+                const matchingOption = dropdown.querySelector(`.dropdown-option[data-value="${initialValue}"]`);
+                if (matchingOption) {
+                    selectedText.textContent = matchingOption.textContent;
+                    matchingOption.setAttribute('data-selected', 'true');
+                }
             }
         }
     }

@@ -1227,29 +1227,7 @@ header.scrolled .nav-container {
     /* Increased from 40px */
 }
 
-.mobile-filter-dropdown select {
-    width: 100%;
-    padding: 12px 20px;
-    background: rgba(18, 18, 18, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-color);
-    border-radius: 12px;
-    font-size: 1rem;
-    font-family: 'Outfit', sans-serif;
-    appearance: none;
-    -webkit-appearance: none;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
-}
 
-.dropdown-chevron {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: var(--accent-color);
-}
 
 @media (max-width: 600px) {
     .portfolio-filters {
@@ -1399,38 +1377,6 @@ header.scrolled .nav-container {
 /* Removed rigid nth-child positioning to prevent overlap issues during filtering. */
 
 /* Adjustments for mobile */
-@media (max-width: 1024px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(12, 1fr);
-    }
-
-    .portfolio-card {
-        grid-column: span 4;
-    }
-
-    /* 3 per row on tablet */
-    .portfolio-card.aspect-16-9 {
-        grid-column: span 12;
-    }
-
-    /* Full width */
-    .portfolio-card.mobile-app-card {
-        grid-column: span 6;
-    }
-
-    /* 2 per row on tablet */
-}
-
-@media (max-width: 600px) {
-
-    .portfolio-card,
-    .portfolio-card.aspect-16-9,
-    .portfolio-card.mobile-app-card {
-        grid-column: span 12 !important;
-        /* Full width on phones */
-    }
-}
-
 .card-image {
     position: relative;
     width: 100%;
@@ -1446,67 +1392,196 @@ header.scrolled .nav-container {
     transition: none;
 }
 
-/* Responsive Design Cleanup */
+/* Responsive adjustments */
 @media (max-width: 1024px) {
     .portfolio-grid {
-        grid-template-columns: repeat(12, 1fr);
-        grid-auto-rows: auto;
-        height: auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: min-content;
+        /* Ensure rows shrink to fit content */
+        grid-auto-flow: row;
+        gap: 24px;
+        height: min-content !important;
+        /* Force container to shrink */
     }
 
-    .portfolio-card {
-        grid-column: span 6 !important;
-        grid-row: auto !important;
-    }
-
-    .portfolio-card.aspect-16-9,
-    .portfolio-card.mobile-app-card {
-        grid-column: span 12 !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .portfolio-section {
-        padding: 80px 0;
-    }
-
-    .portfolio-grid {
-        gap: 12px;
-        /* Reduced from 15px */
-        grid-auto-rows: auto;
-    }
-
+    /* Reset grid spans for tablet to avoid overlap */
     .portfolio-card,
     .portfolio-card.aspect-16-9,
     .portfolio-card.mobile-app-card {
-        grid-column: span 12 !important;
-        height: auto;
+        grid-column: span 1 !important;
+        grid-row: auto !important;
+        height: auto !important;
+        aspect-ratio: auto;
+        /* Reset base ratio */
+        position: relative !important;
+    }
+
+    .portfolio-card.hidden {
+        display: none !important;
+    }
+
+    .portfolio-card.aspect-16-9 {
         aspect-ratio: 16 / 9;
     }
 
     .portfolio-card.mobile-app-card {
         aspect-ratio: 9 / 16;
-        max-width: 320px;
+        max-width: 80%;
+        /* Reduce width to be more manageable on tablet */
         margin: 0 auto;
-    }
-
-    .mobile-filter-dropdown {
-        margin-bottom: 30px;
-        /* Reduced from 80px for mobile */
+        /* Center it */
+        grid-row: span 2 !important;
+        /* Let them take 2 rows to fit vertical images naturally */
     }
 }
 
-@media (max-width: 480px) {
-    .portfolio-grid {
-        gap: 10px;
-        /* Reduced from 12px */
+@media (max-width: 600px) {
+    .portfolio-section {
+        padding: 40px 0 60px;
+        /* Adjusted padding */
     }
 
-    /* Let aspect ratio handle height */
+    .portfolio-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 40px;
+    }
+
     .portfolio-card,
-    .portfolio-card.aspect-16-9,
+    .portfolio-card.aspect-16-9 {
+        width: 100%;
+        margin-bottom: 0;
+        grid-column: auto !important;
+        grid-row: auto !important;
+        aspect-ratio: 16/9;
+    }
+
     .portfolio-card.mobile-app-card {
-        height: auto;
+        width: 100%;
+        max-width: 320px;
+        /* constrain width to avoid excessively tall cards */
+        margin: 0 auto;
+        aspect-ratio: 9 / 16;
+    }
+
+    .mobile-filter-dropdown {
+        margin-bottom: 40px;
+    }
+}
+
+/* Custom Mobile Dropdown Styles */
+.mobile-filter-dropdown.custom-dropdown {
+    display: none;
+    /* Hidden by default, shown in mobile/tablet via media query */
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 40px;
+    z-index: 50;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.custom-dropdown .dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 14px 20px;
+    background: rgba(18, 18, 18, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+    user-select: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-dropdown .dropdown-header:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(25, 25, 25, 0.95);
+}
+
+.custom-dropdown.open .dropdown-header {
+    border-color: var(--accent-color);
+    background: rgba(18, 18, 18, 0.95);
+    box-shadow: 0 0 15px rgba(132, 255, 0, 0.15);
+}
+
+.custom-dropdown .dropdown-chevron {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: var(--accent-color);
+}
+
+.custom-dropdown.open .dropdown-chevron {
+    transform: rotate(180deg);
+}
+
+.dropdown-options {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.98);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 101;
+    overflow: hidden;
+}
+
+.custom-dropdown.open .dropdown-options {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.dropdown-option {
+    padding: 12px 16px;
+    color: var(--subtext-color);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.dropdown-option:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-option:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-color);
+    padding-left: 20px;
+    /* Slide effect */
+}
+
+.dropdown-option[data-selected="true"] {
+    background: rgba(132, 255, 0, 0.15);
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Ensure it shows on mobile/tablet */
+@media (max-width: 1024px) {
+    .portfolio-filters {
+        display: none !important;
+    }
+
+    .mobile-filter-dropdown.custom-dropdown {
+        display: block;
     }
 }
 

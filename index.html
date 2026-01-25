@@ -388,17 +388,20 @@
                 <button class="filter-btn" data-filter="mobile-apps">Mobile Apps</button>
             </div>
 
-            <div class="mobile-filter-dropdown">
-                <select id="portfolio-category-select" aria-label="Select portfolio category">
-                    <option value="branding">Branding</option>
-                    <option value="web-design">Web Design</option>
-                    <option value="mvp">MVP Development</option>
-                    <option value="mobile-apps">Mobile Apps</option>
-                </select>
-                <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                </svg>
+            <div class="mobile-filter-dropdown custom-dropdown" id="mobile-portfolio-dropdown">
+                <div class="dropdown-header" tabindex="0">
+                    <span class="selected-text">Branding</span>
+                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m6 9 6 6 6-6" />
+                    </svg>
+                </div>
+                <div class="dropdown-options">
+                    <div class="dropdown-option" data-value="branding">Branding</div>
+                    <div class="dropdown-option" data-value="web-design">Web Design</div>
+                    <div class="dropdown-option" data-value="mvp">MVP Development</div>
+                    <div class="dropdown-option" data-value="mobile-apps">Mobile Apps</div>
+                </div>
             </div>
 
             <div class="portfolio-grid">
