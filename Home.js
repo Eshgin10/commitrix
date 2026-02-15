@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Navigation Setup ---
     const navLinks = document.querySelectorAll('.nav-links a:not([href$="Login.html"]):not([href$="FAQ.html"])'); // Exclude external links for indicator
     const allNavLinks = document.querySelectorAll('.nav-links a'); // For general purposes
-    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-links a, .mobile-cta');
     const navIndicator = document.querySelector('.nav-indicator');
     const navLinksContainer = document.querySelector('.nav-links');
     const mobileMenuPanel = document.getElementById('mobile-menu-panel');

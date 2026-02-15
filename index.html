@@ -26,6 +26,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Manufacturing+Consent&family=Outfit:wght@100..900&family=Sankofa+Display&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="positioning.css">
 
     <!-- Add small overrides to prevent strips/cursor from being clipped by ancestor overflow and ensure cursor visibility -->
     <style>
@@ -62,18 +63,18 @@
 
     <header>
         <nav class="nav-container">
-            <a href="#home" class="logo" aria-label="Commitrix Home">
+            <a href="#home" class="logo" aria-label="Commitrix">
                 <span class="logo-dot">•</span>
                 Commitrix
             </a>
 
             <div class="nav-links" id="main-nav">
                 <div class="nav-indicator"></div>
-                <a href="#home" data-page="home" aria-label="Home">Home</a>
                 <a href="#services" data-page="services" aria-label="Services">Services</a>
                 <a href="#portfolio" data-page="portfolio" aria-label="Portfolio">Portfolio</a>
-                <a href="#pricing" data-page="pricing" aria-label="Pricing">Pricing</a>
+                <!-- <a href="#pricing" data-page="pricing" aria-label="Pricing">Pricing</a> -->
                 <a href="#benefits" data-page="benefits" aria-label="Benefits">Benefits</a>
+                <a href="#why-us" data-page="why-us" aria-label="Why Us">Why Us</a>
                 <a href="#story" data-page="process" aria-label="Process">Process</a>
                 <a href="#faq" data-page="faq" aria-label="FAQ">FAQ</a>
             </div>
@@ -112,36 +113,56 @@
             <button class="close-menu" aria-label="Close menu">✕</button>
 
             <div class="mobile-menu-content">
+                <div class="mobile-cta-container">
+                    <a href="https://x.com/Eshg1n0" class="cta-btn dm-btn mobile-cta" target="_blank"
+                        aria-label="DM on X">
+                        DM on
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                    <a href="https://calendly.com/eshgin-commitrix/15-minute-discussing"
+                        class="cta-btn book-btn mobile-cta" target="_blank" aria-label="Book a call">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        Book a call
+                    </a>
+                </div>
                 <div class="mobile-nav-links" id="mobile-nav-links-list">
-                    <a href="#home" data-page="home" aria-label="Home">Home</a>
                     <a href="#services" data-page="services" aria-label="Services">Services</a>
                     <a href="#portfolio" data-page="portfolio" aria-label="Portfolio">Portfolio</a>
-                    <a href="#pricing" data-page="pricing" aria-label="Pricing">Pricing</a>
+                    <!-- <a href="#pricing" data-page="pricing" aria-label="Pricing">Pricing</a> -->
                     <a href="#benefits" data-page="benefits" aria-label="Benefits">Benefits</a>
+                    <a href="#why-us" data-page="why-us" aria-label="Why Us">Why Us</a>
                     <a href="#story" data-page="process" aria-label="Process">Process</a>
                     <a href="#faq" data-page="faq" aria-label="FAQ">FAQ</a>
                 </div>
             </div>
 
             <div class="mobile-menu-bottom">
-                <!-- Primary Action Area -->
             </div>
         </div>
     </header>
 
     <section class="hero" id="home">
-        <span class="section-badge">7-Day Free Trial Is Available</span>
-        <h1>Design & Development Services<span class="accent-text">For Your AI or SaaS Company</span></h1>
-        <p>Managing your digital presence shouldn't slow you down. Let us accelarate your business
+        <span class="section-badge">Available for work</span>
+        <h1>Your <span class="accent-text">Engineering Partner</span><br> For Shipping Real Products Fast</h1>
+        <p>An AI-native, engineering-first studio building scalable web systems, SaaS platforms, and automation-ready
+            foundations for serious founders.
         </p>
         <div class="hero-actions">
-            <a href="#pricing" class="action-btn primary" aria-label="Check Prices">Check Prices</a>
+            <a href="https://calendly.com/eshgin-commitrix/15-minute-discussing" class="action-btn primary"
+                target="_blank" aria-label="Book a Call">Book a Call</a>
             <a href="#portfolio" class="action-btn secondary" aria-label="View Work">View Work</a>
         </div>
         <div class="features">
             <div class="feature">
                 <span class="feature-icon checkmark"></span>
-                High Conversion
+                Super Fast
             </div>
             <div class="feature">
                 <span class="feature-icon checkmark"></span>
@@ -154,14 +175,14 @@
         <div class="strip-container">
             <div class="strip straight">
                 <div class="strip-track" id="strip-track-1">
-                    <span>Monthly Subscription for All your Design &amp; Development Services</span>
-                    <span>Monthly Subscription for All your Design &amp; Development Services</span>
+                    <span>Monthly Subscription for your web Design &amp; Development Services</span>
+                    <span>Monthly Subscription for your web Design &amp; Development Services</span>
                 </div>
             </div>
             <div class="strip angled">
                 <div class="strip-track" id="strip-track-2">
-                    <span>Monthly Subscription for All your Design &amp; Development Services</span>
-                    <span>Monthly Subscription for All your Design &amp; Development Services</span>
+                    <span>Monthly Subscription for your web Design &amp; Development Services</span>
+                    <span>Monthly Subscription for your web Design &amp; Development Services</span>
                 </div>
             </div>
         </div>
@@ -181,192 +202,399 @@
                 <div class="services-grid">
                     <!-- Web Design & Development -->
                     <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
-                                <path d="M14 2v4a2 2 0 0 0 2 2h4" />
-                                <path d="m10 13-2 2 2 2" />
-                                <path d="m14 17 2-2-2-2" />
-                            </svg>
+                        <div class="card-header">
+                            <h3>Web Design & Development</h3>
+                            <p>Custom, high-performance websites built with modern technologies.</p>
                         </div>
-                        <h3>Web Design & Development</h3>
-                        <p>Custom, high-performance websites built with modern technologies and a focus on scalability.
-                        </p>
+                        <div class="card-visual-container">
+                            <div class="card-visual">
+                                <div class="visual-split">
+                                    <div class="split-design">
+                                        <div class="design-tag">DESIGN</div>
+                                        <div class="design-mockup">
+                                            <div class="mock-hero"></div>
+                                            <div class="mock-grid">
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="split-dev">
+                                        <div class="dev-tag">CODE</div>
+                                        <div class="dev-lines">
+                                            <span class="l1"></span>
+                                            <span class="l2"></span>
+                                            <span class="l3"></span>
+                                            <span class="l4"></span>
+                                            <span class="l1"></span>
+                                            <span class="l2"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Landing Page Creation -->
                     <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 3h18v18H3z" />
-                                <path d="M3 9h18" />
-                                <path d="M9 21V9" />
-                                <path d="m7 5 1 1-1 1" />
-                                <path d="m11 5 1 1-1 1" />
-                            </svg>
+                        <div class="card-header">
+                            <h3>Landing Page Creation</h3>
+                            <p>Conversion-optimized landing pages designed to turn visitors into customers.</p>
                         </div>
-                        <h3>Landing Page Creation</h3>
-                        <p>Conversion-optimized landing pages designed to turn your visitors into loyal customers.</p>
+                        <div class="card-visual-container">
+                            <div class="card-visual">
+                                <div class="visual-landing">
+                                    <div class="landing-header">
+                                        <div class="l-dot"></div>
+                                        <div class="l-nav"><span></span><span></span></div>
+                                    </div>
+                                    <div class="landing-hero">
+                                        <div class="l-title"></div>
+                                        <div class="l-text"></div>
+                                        <div class="l-button"></div>
+                                    </div>
+                                    <div class="landing-grid">
+                                        <div class="l-grid-item"></div>
+                                        <div class="l-grid-item"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Web Application Development -->
                     <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3" />
-                                <path d="M21 16v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3" />
-                                <rect width="20" height="8" x="2" y="8" rx="2" />
-                                <path d="M7 12h.01" />
-                                <path d="M11 12h.01" />
-                                <path d="M15 12h.01" />
-                            </svg>
+                        <div class="card-header">
+                            <h3>Web Application Development</h3>
+                            <p>Complex, feature-rich web applications with intuitive user flows.</p>
                         </div>
-                        <h3>Web Application Development</h3>
-                        <p>Complex, feature-rich web applications with intuitive user flows and robust backends.</p>
+                        <div class="card-visual-container">
+                            <div class="card-visual">
+                                <div class="visual-split-app">
+                                    <div class="split-layers">
+                                        <div class="layer-tag">STACK</div>
+                                        <div class="app-layer"><span>UI</span></div>
+                                        <div class="app-layer"><span>API</span></div>
+                                        <div class="app-layer accent"><span>DATA</span></div>
+                                    </div>
+                                    <div class="split-logic">
+                                        <div class="logic-tag">MODULES</div>
+                                        <div class="logic-grid">
+                                            <span></span><span></span>
+                                            <span></span><span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Mobile App Design & Development -->
                     <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
-                                <path d="M12 18h.01" />
-                                <path d="M9 14h6" />
-                                <path d="M9 10h6" />
-                                <path d="M9 6h6" />
-                            </svg>
+                        <div class="card-header">
+                            <h3>Mobile App Design & Development</h3>
+                            <p>Beautiful, native-feeling mobile experiences for iOS and Android.</p>
                         </div>
-                        <h3>Mobile App Design & Development</h3>
-                        <p>Beautiful, native-feeling mobile experiences for iOS and Android that engage users on the go.
-                        </p>
+                        <div class="card-visual-container">
+                            <div class="card-visual">
+                                <div class="visual-mobile-schematic">
+                                    <div class="mobile-frame-mini">
+                                        <div class="frame-notch"></div>
+                                        <div class="frame-content">
+                                            <div class="f-line"></div>
+                                            <div class="f-grid">
+                                                <span></span><span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mobile-logic">
+                                        <div class="m-tag">NATIVE BRIDGE</div>
+                                        <div class="m-connector"></div>
+                                        <div class="m-node"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- MVP Development -->
                     <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
-                                <path
-                                    d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
-                                <path d="M9 12H4s.5-1 1-4c1.5 0 3 .5 3 .5L9 12Z" />
-                                <path d="M12 15v5s1-.5 4-1c0-1.5-.5-3-.5-3L12 15Z" />
-                            </svg>
+                        <div class="card-header">
+                            <h3>MVP Development (SaaS)</h3>
+                            <p>Bringing your SaaS idea to market fast with a robust MVP.</p>
                         </div>
-                        <h3>MVP Development (SaaS)</h3>
-                        <p>Bringing your SaaS idea to market fast with a robust MVP that validates your vision.</p>
+                        <div class="card-visual-container">
+                            <div class="card-visual">
+                                <div class="visual-saas-blocks">
+                                    <div class="assembly-area">
+                                        <!-- The base block that is already there -->
+                                        <div class="block segment-base"></div>
+
+                                        <!-- Blocks that come in and snap to the base -->
+                                        <div class="block segment-auth"><span>AUTH</span></div>
+                                        <div class="block segment-api"><span>API</span></div>
+                                        <div class="block segment-db"><span>DATA</span></div>
+                                        <div class="block segment-ui"><span>UI</span></div>
+                                    </div>
+                                    <div class="assembly-ghost-frame"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Brand Identity Design -->
                     <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="m12 19 7-7 3 3-7 7-3-3z" />
-                                <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
-                                <path d="m2 2 5 2.5" />
-                                <path d="m2 2 2.5 5" />
-                                <path d="m9.28 9.28 1.83 1.83" />
-                                <path d="m14.5 19-3.5-3.5" />
-                            </svg>
+                        <div class="card-header">
+                            <h3>Brand Identity Design</h3>
+                            <p>Visual storytelling through logos, typography, and cohesive systems.</p>
                         </div>
-                        <h3>Brand Identity Design</h3>
-                        <p>Visual storytelling through logos, typography, and cohesive design systems that define your
-                            brand.</p>
+                        <div class="card-visual-container">
+                            <div class="card-visual">
+                                <div class="visual-brand-schematic">
+                                    <div class="brand-grid-spec">
+                                        <div class="spec-line h"></div>
+                                        <div class="spec-line v"></div>
+                                        <div class="brand-logo-mini">
+                                            <img src="img/Commitrix.png" alt="Commitrix">
+                                        </div>
+                                    </div>
+                                    <div class="brand-system">
+                                        <div class="s-tag">SYSTEM</div>
+                                        <div class="s-colors-grid">
+                                            <span></span><span></span><span></span>
+                                        </div>
+                                        <div class="s-type-spec">Aa</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Internal tools & dashboards -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>Internal tools & dashboards</h3>
+                            <p>Custom admin panels, operational dashboards, and internal tools built to scale your
+                                business workflows.
+                            </p>
+                        </div>
+                        <div class="card-visual-container">
+                            <div class="card-visual">
+                                <div class="visual-mvp-blueprint">
+                                    <div class="blueprint-window">
+                                        <div class="window-header">
+                                            <div class="header-dots"><span></span><span></span><span></span></div>
+                                            <div class="header-address">app.vibe</div>
+                                        </div>
+                                        <div class="blueprint-content">
+                                            <div class="side-nav"></div>
+                                            <div class="main-view">
+                                                <div class="view-header"></div>
+                                                <div class="view-grid">
+                                                    <div class="grid-item"></div>
+                                                    <div class="grid-item accent"></div>
+                                                    <div class="grid-item"></div>
+                                                    <div class="grid-item"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="floating-ui-badge">ACTIVE</div>
+                                    <div class="floating-ui-code">&lt;/&gt;</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Deployment Workflows -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>Custom Deployment Workflows</h3>
+                            <p>Automated CI/CD pipelines and deployment strategies for seamless, zero-downtime shipping.
+                            </p>
+                        </div>
+                        <div class="card-visual-container">
+                            <div class="card-visual">
+                                <div class="visual-system-pipeline">
+                                    <!-- Repo Stage -->
+                                    <div class="pipeline-stage repo">
+                                        <div class="repo-cluster">
+                                            <div class="file-icon"></div>
+                                            <div class="file-icon"></div>
+                                            <div class="commit-node"></div>
+                                        </div>
+                                        <span class="stage-label">SOURCE</span>
+                                    </div>
+
+                                    <div class="pipeline-arrow"></div>
+
+                                    <!-- Pipeline Stage -->
+                                    <div class="pipeline-stage build">
+                                        <div class="build-stack">
+                                            <div class="build-step"><span></span>
+                                                <div class="check"></div>
+                                            </div>
+                                            <div class="build-step"><span></span>
+                                                <div class="check"></div>
+                                            </div>
+                                            <div class="build-step"><span></span>
+                                                <div class="check"></div>
+                                            </div>
+                                        </div>
+                                        <span class="stage-label">PIPELINE</span>
+                                    </div>
+
+                                    <div class="pipeline-arrow"></div>
+
+                                    <!-- Engine Stage -->
+                                    <div class="pipeline-stage engine">
+                                        <div class="engine-node">
+                                            <div class="node-core"></div>
+                                            <div class="branch-lines">
+                                                <span></span><span></span><span></span>
+                                            </div>
+                                        </div>
+                                        <span class="stage-label">ENGINE</span>
+                                    </div>
+
+                                    <div class="pipeline-arrow"></div>
+
+                                    <!-- Live Stage -->
+                                    <div class="pipeline-stage live">
+                                        <div class="live-cluster">
+                                            <div class="dest-block"></div>
+                                            <div class="dest-block accent">
+                                                <div class="live-blink"></div>
+                                            </div>
+                                            <div class="dest-block"></div>
+                                        </div>
+                                        <span class="stage-label">LIVE</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Database & infrastructure work -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>Database & infrastructure work</h3>
+                            <p>Robust database design and cloud infrastructure setup for high-availability systems.</p>
+                        </div>
+                        <div class="card-visual-container">
+                            <div class="card-visual">
+                                <div class="visual-data-system">
+                                    <div class="user-source">
+                                        <div class="user-avatar"></div>
+                                        <span class="label">USER</span>
+                                    </div>
+                                    <div class="data-connector">
+                                        <div class="flow-dot"></div>
+                                    </div>
+                                    <div class="database-storage">
+                                        <div class="db-box">
+                                            <div class="db-shelf"></div>
+                                            <div class="db-shelf"></div>
+                                            <div class="db-shelf accent"></div>
+                                        </div>
+                                        <span class="label">DATABASE</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Consulting Services Group -->
             <div class="services-group consulting-group">
-                <h3 class="group-title">
-                    <div class="title-wrapper">Consulting Services</div>
+                <div class="group-header">
+                    <h3 class="group-title">Consulting Services</h3>
                     <div class="group-desc">Guiding you through the process of building your own product showing tools
                         and strategies that we use.</div>
-                </h3>
-                <div class="services-grid">
+                </div>
+                <div class="services-grid consulting-grid">
                     <!-- Light level Vibe coding -->
-                    <div class="service-card">
-                        <div class="service-icon dual-icons">
-                            <img src="https://lovable.dev/favicon.ico" alt="Lovable" class="app-icon">
-                            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/replit-icon.png"
-                                alt="Replit" class="app-icon">
+                    <div class="service-card consulting-card">
+                        <div class="tool-icons">
+                            <img src="img/lovable.png" alt="Lovable" class="tool-icon">
+                            <img src="img/replit.png" alt="Replit" class="tool-icon">
                         </div>
-                        <h3>Light level Vibe coding</h3>
-                        <p>Expert guidance on using tools like Lovable, Bolt, V0 and Replit to build applications at
-                            lightning speeds with
-                            AI. Can be used for MVP develoment and idea validation.
-                        </p>
+                        <div class="card-content">
+                            <h3>Light level Vibe coding</h3>
+                            <p>Expert guidance on using tools like Lovable, Bolt, V0 and Replit to build applications at
+                                lightning speeds with AI. Can be used for MVP development and idea validation.</p>
+                        </div>
                     </div>
 
                     <!-- Hard-Core vibe coding -->
-                    <div class="service-card">
-                        <div class="service-icon dual-icons">
-                            <img src="https://cursor.com/favicon.ico" alt="Cursor" class="app-icon">
-                            <img src="img/antigravity.png" alt="Antigravity" class="app-icon">
+                    <div class="service-card consulting-card">
+                        <div class="tool-icons">
+                            <img src="img/cursor.png" alt="Cursor" class="tool-icon">
+                            <img src="img/claude.png" alt="Claude" class="tool-icon">
                         </div>
-                        <h3>Hard-Core vibe coding</h3>
-                        <p>Deep dive into Cursor and agentic workflows to handle complex architectures and legacy code.
-                            Can be used for large scale projects and for production level applications.
-                        </p>
+                        <div class="card-content">
+                            <h3>Hard-Core vibe coding</h3>
+                            <p>Deep dive into Cursor and agentic workflows to handle complex architectures and legacy
+                                code. Can be used for large scale projects and for production level applications.</p>
+                        </div>
                     </div>
 
-                    <!-- Deployment Workflows -->
-                    <div class="service-card">
-                        <div class="service-icon dual-icons">
-                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-                                alt="Github" class="app-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="app-icon">
-                                <polyline points="4 17 10 11 4 5" />
-                                <line x1="12" y1="19" x2="20" y2="19" />
+                    <!-- AI Automations -->
+                    <div class="service-card consulting-card">
+                        <div class="tool-icons">
+                            <svg role="img" width="24" height="24" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg" class="tool-icon" fill="#6e21cc">
+                                <title>Make</title>
+                                <path
+                                    d="M13.38 3.498c-.27 0-.511.19-.566.465L9.85 18.986a.578.578 0 0 0 .453.678l4.095.826a.58.58 0 0 0 .682-.455l2.963-15.021a.578.578 0 0 0-.453-.678l-4.096-.826a.589.589 0 0 0-.113-.012zm-5.876.098a.576.576 0 0 0-.516.318L.062 17.697a.575.575 0 0 0 .256.774l3.733 1.877a.578.578 0 0 0 .775-.258l6.926-13.781a.577.577 0 0 0-.256-.776L7.762 3.658a.571.571 0 0 0-.258-.062zm11.74.115a.576.576 0 0 0-.576.576v15.426c0 .318.258.578.576.578h4.178a.58.58 0 0 0 .578-.578V4.287a.578.578 0 0 0-.578-.576Z" />
                             </svg>
+                            <img src="img/zapier.png" alt="Zapier" class="tool-icon" style="width: 32px; height: 32px;">
                         </div>
-                        <h3>Deployment Workflows</h3>
-                        <p>Help with github and terminal for non-technical founders, showing you how to deploy and
-                            manage your applications.
-                        </p>
+                        <div class="card-content">
+                            <h3>AI Automations</h3>
+                            <p>Streamline your operations by connecting your favorite apps and automating repetitive
+                                tasks with Make and Zapier.</p>
+                        </div>
                     </div>
 
                     <!-- DataBase Management -->
-                    <div class="service-card">
-                        <div class="service-icon dual-icons">
-                            <img src="https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png"
-                                alt="Firebase" class="app-icon">
-                            <img src="https://supabase.com/dashboard/img/supabase-logo.svg" alt="Supabase"
-                                class="app-icon">
+                    <div class="service-card consulting-card">
+                        <div class="tool-icons">
+                            <img src="img/firebase.png" alt="Firebase" class="tool-icon">
+                            <img src="img/supabase.png" alt="Supabase" class="tool-icon">
                         </div>
-                        <h3>DataBase Management</h3>
-                        <p>Teaching you how to connect your applications to databases and manage your logins and data.
-                        </p>
+                        <div class="card-content">
+                            <h3>DataBase Management</h3>
+                            <p>Teaching you how to connect your applications to databases and manage your logins and
+                                data.</p>
+                        </div>
                     </div>
 
                     <!-- Using LLMs in the workflows -->
-                    <div class="service-card">
-                        <div class="service-icon dual-icons">
-                            <img src="img/gemini.png" alt="Gemini" class="app-icon">
-                            <img src="https://claude.ai/favicon.ico" alt="Claude" class="app-icon">
+                    <div class="service-card consulting-card">
+                        <div class="tool-icons">
+                            <img src="img/gemini-color.png" alt="Gemini" class="tool-icon">
+                            <img src="img/claude-color.png" alt="Claude" class="tool-icon">
                         </div>
-                        <h3>Using LLMs in Workflows</h3>
-                        <p>Integrating Gemini and Claude into your daily processes for maximum efficiency and
-                            creativity.
-                        </p>
+                        <div class="card-content">
+                            <h3>Using LLMs In Workflows</h3>
+                            <p>Integrating Gemini and Claude into your daily processes for maximum efficiency and
+                                creativity.</p>
+                        </div>
                     </div>
 
                     <!-- Design Tools -->
-                    <div class="service-card">
-                        <div class="service-icon dual-icons">
-                            <img src="img/stitch.png" alt="Stitch" class="app-icon">
-                            <img src="img/relume.png" alt="Relume" class="app-icon">
+                    <div class="service-card consulting-card">
+                        <div class="tool-icons">
+                            <img src="img/stitch.png" alt="Stitch" class="tool-icon">
+                            <img src="img/relume.png" alt="Relume" class="tool-icon">
                         </div>
-                        <h3>Design Tools</h3>
-                        <p>Mastering modern design systems with Stitch and Relume to bridge the gap between design and
-                            code.</p>
+                        <div class="card-content">
+                            <h3>Design Tools</h3>
+                            <p>Mastering modern design systems with Stitch and Relume to bridge the gap between design
+                                and code.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -382,29 +610,36 @@
 
             <div class="portfolio-filters">
                 <div class="filter-indicator"></div>
-                <button class="filter-btn active" data-filter="branding">Branding</button>
-                <button class="filter-btn" data-filter="web-design">Web Design</button>
+                <button class="filter-btn active" data-filter="web-design">Web Design</button>
+                <button class="filter-btn" data-filter="branding">Branding</button>
                 <button class="filter-btn" data-filter="mvp">MVP Development</button>
                 <button class="filter-btn" data-filter="mobile-apps">Mobile Apps</button>
             </div>
 
             <div class="mobile-filter-dropdown custom-dropdown" id="mobile-portfolio-dropdown">
                 <div class="dropdown-header" tabindex="0">
-                    <span class="selected-text">Branding</span>
+                    <span class="selected-text">Web Design</span>
                     <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="m6 9 6 6 6-6" />
                     </svg>
                 </div>
                 <div class="dropdown-options">
-                    <div class="dropdown-option" data-value="branding">Branding</div>
                     <div class="dropdown-option" data-value="web-design">Web Design</div>
+                    <div class="dropdown-option" data-value="branding">Branding</div>
                     <div class="dropdown-option" data-value="mvp">MVP Development</div>
                     <div class="dropdown-option" data-value="mobile-apps">Mobile Apps</div>
                 </div>
             </div>
 
             <div class="portfolio-grid">
+                <div class="portfolio-card aspect-16-9" data-url="https://military-ai-ops.preview.emergentagent.com/"
+                    data-category="web-design">
+                    <div class="card-image">
+                        <img src="img/work10.png" alt="Military AI Ops">
+                    </div>
+                </div>
+
                 <div class="portfolio-card aspect-16-9" data-url="https://aura-nft-art-display.lovable.app"
                     data-category="web-design">
                     <div class="card-image">
@@ -474,6 +709,13 @@
                     data-category="web-design">
                     <div class="card-image">
                         <img src="img/work8.png" alt="Cortex AI Website">
+                    </div>
+                </div>
+
+                <div class="portfolio-card aspect-16-9" data-url="https://eshgin10.github.io/ScribeX/"
+                    data-category="web-design">
+                    <div class="card-image">
+                        <img src="img/work11.png" alt="ScribeX">
                     </div>
                 </div>
 
@@ -556,17 +798,18 @@
         </svg>
     </div>
 
+    <!-- 
     <section class="pricing" id="pricing">
         <span class="section-badge">Pricing Plans</span>
         <div class="pricing-cards">
 
 
-            <!-- Card 1: Strategy & Consulting -->
             <div class="pricing-card">
 
                 <div class="card-header">
                     <h3 class="plan-title">Strategy & Consulting</h3>
-                    <p class="plan-subtitle">Get expert guidance on every call. Learn the tools. Build your solutions.
+                    <p class="plan-subtitle">Get expert guidance on every call. Learn the tools. Build your
+                        solutions.
                         Execute your strategy with confidence.</p>
                 </div>
                 <div class="card-pricing">
@@ -592,17 +835,18 @@
                 </div>
             </div>
 
-            <!-- Card 2: Done-For-You Building -->
+
             <div class="pricing-card">
 
                 <div class="card-header">
                     <h3 class="plan-title">Done-For-You Building</h3>
-                    <p class="plan-subtitle">You tell us what you need. We design, build, and deliver—no learning curve,
+                    <p class="plan-subtitle">You tell us what you need. We design, build, and deliver—no
+                        learning curve,
                         no execution headaches. Just results.</p>
                 </div>
                 <div class="card-pricing">
                     <div class="price-wrapper">
-                        <span class="price-value">$2,799</span><span class="period">/month</span>
+                        <span class="price-value">$2799</span><span class="period">/month</span>
                     </div>
                     <p class="billing-info">Billed monthly • Cancel anytime</p>
                 </div>
@@ -622,11 +866,47 @@
                     </ul>
                 </div>
             </div>
+
+
+            <div class="pricing-card">
+                <div class="availability-badge">
+                    <span class="shining-dot"></span>
+                    <span class="availability-text">1 slot is available</span>
+                </div>
+                <div class="card-header">
+                    <h3 class="plan-title">VIP Engineering Partner</h3>
+                    <p class="plan-subtitle">Our most comprehensive partnership for scaling companies that need
+                        dedicated, elite engineering muscle.</p>
+                </div>
+                <div class="card-pricing">
+                    <div class="price-wrapper">
+                        <span class="price-value">$15000</span><span class="period">/month</span>
+                    </div>
+                    <p class="billing-info">Billed monthly • Cancel anytime</p>
+                </div>
+                <a href="https://buy.stripe.com/4gM3cwclP3czghlb7U8N204" class="cta-btn dm-btn" target="_blank">Start
+                    7-Day Free Trial</a>
+
+                <div class="included-section">
+                    <h4>What you'll get each month</h4>
+                    <ul class="features-list">
+                        <li><span class="check">✓</span> 2 requests at a time</li>
+                        <li><span class="check">✓</span> Extremely fast turnarounds</li>
+                        <li><span class="check">✓</span> Priority support</li>
+                        <li><span class="check">✓</span> Live call whenever they need</li>
+                        <li><span class="check">✓</span> Engineering decisions discussed and explained</li>
+                        <li><span class="check">✓</span> Unlimited revisions on deliverables</li>
+                        <li><span class="check">✓</span> Early access to new features and tools of Commitrix
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
 
 
     </section>
+    -->
 
     <!-- Benefits Section -->
     <section class="benefits-section" id="benefits">
@@ -642,7 +922,8 @@
                         </svg>
                     </div>
                     <h3>Fast turnaround time</h3>
-                    <p>Your site delivered in record time. We prioritize efficiency to help you launch faster without
+                    <p>Your site delivered in record time. We prioritize efficiency to help you launch faster
+                        without
                         ever cutting corners on excellence.</p>
                 </div>
                 <div class="benefit-card">
@@ -654,7 +935,8 @@
                         </svg>
                     </div>
                     <h3>Development in Code</h3>
-                    <p>Pure, optimized code for peak performance. No bloat, no builders—just clean architecture built to
+                    <p>Pure, optimized code for peak performance. No bloat, no builders—just clean architecture
+                        built to
                         scale with your ambition.</p>
                 </div>
                 <div class="benefit-card">
@@ -670,7 +952,8 @@
                         </svg>
                     </div>
                     <h3>Custom Design</h3>
-                    <p>Bespoke visuals that define your brand. We create unique, high-end designs tailored specifically
+                    <p>Bespoke visuals that define your brand. We create unique, high-end designs tailored
+                        specifically
                         to your vision and market position.</p>
                 </div>
                 <div class="benefit-card">
@@ -684,6 +967,140 @@
                     <h3>Premium Quality</h3>
                     <p>Excellence in every detail. From smooth animations to robust functionality, we deliver a
                         sophisticated experience that lasts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Positioning Section -->
+    <section class="positioning-section" id="why-us">
+        <div class="positioning-header">
+            <div class="section-badge">Comparison</div>
+        </div>
+
+        <div class="comparison-container">
+            <div class="comparison-grid">
+                <!-- Header Column -->
+                <div class="comparison-header-cell label">Feature</div>
+                <div class="comparison-header-cell traditional">Traditional Agencies</div>
+                <div class="comparison-header-cell commitrix">Commitrix (Engineering-First)</div>
+
+                <!-- Primary Focus -->
+                <div class="comparison-row">
+                    <div class="comparison-cell label">
+                        <svg class="cell-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        Primary Focus
+                    </div>
+                    <div class="comparison-cell traditional-value">Design deliverables & mockups</div>
+                    <div class="comparison-cell commitrix-value">Production-ready systems</div>
+                </div>
+
+                <!-- Build Method -->
+                <div class="comparison-row">
+                    <div class="comparison-cell label">
+                        <svg class="cell-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        Build Method
+                    </div>
+                    <div class="comparison-cell traditional-value">Page builders / Visual tools</div>
+                    <div class="comparison-cell commitrix-value">Real, optimized code</div>
+                </div>
+
+                <!-- Speed -->
+                <div class="comparison-row">
+                    <div class="comparison-cell label">
+                        <svg class="cell-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                        Speed
+                    </div>
+                    <div class="comparison-cell traditional-value">Months to launch</div>
+                    <div class="comparison-cell commitrix-value">Days or weeks</div>
+                </div>
+
+                <!-- Maintainability -->
+                <div class="comparison-row">
+                    <div class="comparison-cell label">
+                        <svg class="cell-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                            </path>
+                        </svg>
+                        Maintainability
+                    </div>
+                    <div class="comparison-cell traditional-value">Fragile, builder-locked setups</div>
+                    <div class="comparison-cell commitrix-value">Clean, extensible codebases</div>
+                </div>
+
+                <!-- Scalability -->
+                <div class="comparison-row">
+                    <div class="comparison-cell label">
+                        <svg class="cell-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                        Scalability
+                    </div>
+                    <div class="comparison-cell traditional-value">Requires frequent rebuilds</div>
+                    <div class="comparison-cell commitrix-value">Designed to scale from day one</div>
+                </div>
+
+                <!-- Integrations -->
+                <div class="comparison-row">
+                    <div class="comparison-cell label">
+                        <svg class="cell-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg>
+                        Integrations
+                    </div>
+                    <div class="comparison-cell traditional-value">Hard or limited possibilities</div>
+                    <div class="comparison-cell commitrix-value">Native, integration-ready</div>
+                </div>
+
+                <!-- AI Readiness -->
+                <div class="comparison-row">
+                    <div class="comparison-cell label">
+                        <svg class="cell-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10 10 10 0 0 1-10-10 10 10 0 0 1 10-10z">
+                            </path>
+                            <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
+                            <line x1="12" y1="8" x2="12" y2="2"></line>
+                            <line x1="12" y1="22" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="2" y2="12"></line>
+                            <line x1="22" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        AI Readiness
+                    </div>
+                    <div class="comparison-cell traditional-value">Afterthought or non-existent</div>
+                    <div class="comparison-cell commitrix-value">AI-ready architecture</div>
+                </div>
+
+                <!-- Long-term Cost -->
+                <div class="comparison-row">
+                    <div class="comparison-cell label">
+                        <svg class="cell-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                        Long-term Cost
+                    </div>
+                    <div class="comparison-cell traditional-value">High tech debt & rebuild costs</div>
+                    <div class="comparison-cell commitrix-value">Compounding value</div>
                 </div>
             </div>
         </div>
@@ -728,8 +1145,10 @@
                     </div>
                     <div class="content">
                         <h2>Deliver your idea</h2>
-                        <p>Once your purchase is complete, we'll promptly add you to Slack. At that point, we'll need
-                            some details from you about the type of project you're looking to create. From now on you
+                        <p>Once your purchase is complete, we'll promptly add you to Slack. At that point, we'll
+                            need
+                            some details from you about the type of project you're looking to create. From now
+                            on you
                             can request a new project as soon as we complete the old one. </p>
                     </div>
                 </div>
@@ -744,7 +1163,8 @@
                     <div class="content">
                         <h2>Design & Development</h2>
                         <p>We will design and develop the application as per your requirements. You can ask for
-                            revisions as many times as you want. We will work on the product until you are satisfied.
+                            revisions as many times as you want. We will work on the product until you are
+                            satisfied.
                         </p>
                         <a href="#portfolio" class="learn-more">See example work <span class="arrow">→</span></a>
                     </div>
@@ -759,7 +1179,8 @@
                     </div>
                     <div class="content">
                         <h2>Deployment</h2>
-                        <p>When you think product is perfect we will deploy and maintain it for you. You can ask for any
+                        <p>When you think product is perfect we will deploy and maintain it for you. You can ask
+                            for any
                             fixes or improvements as long as your subscription is active.
                         </p>
                     </div>
@@ -787,7 +1208,8 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>You can request any of the services listed in our Services section. Commitrix exclusively focused
+                    <p>You can request any of the services listed in our Services section. Commitrix exclusively
+                        focused
                         on these areas to ensure the highest quality results.</p>
                 </div>
             </div>
@@ -810,7 +1232,8 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>If you cancel in the middle of a billing period, you will retain the right to make requests for
+                    <p>If you cancel in the middle of a billing period, you will retain the right to make
+                        requests for
                         the remaining time you've already paid for.</p>
                 </div>
             </div>
@@ -821,7 +1244,8 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Timelines depend on the complexity of the project, but we ensure transparency by providing
+                    <p>Timelines depend on the complexity of the project, but we ensure transparency by
+                        providing
                         updates every 48 hours for every project.</p>
                 </div>
             </div>
@@ -834,11 +1258,14 @@
                 <div class="cta-content">
                     <div class="cta-text">
                         <h2>Ready to Scale Your Business?</h2>
-                        <p>Start your 7-day free trial today and experience a faster way to build and design your
-                            product. Take the first step toward a more impactful digital presence with zero risk.</p>
+                        <p>Start your 7-day free trial today and experience a faster way to build and design
+                            your
+                            product. Take the first step toward a more impactful digital presence with zero
+                            risk.</p>
                         <div class="cta-btns">
-                            <a href="#pricing" class="cta-button2">
-                                <span>Start 7-Day Free Trial</span>
+                            <a href="https://calendly.com/eshgin-commitrix/15-minute-discussing" class="cta-button2"
+                                target="_blank">
+                                <span>Book a Call</span>
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                     <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2"
                                         stroke-linecap="round" stroke-linejoin="round" />

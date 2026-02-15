@@ -1,0 +1,192 @@
+/* Positioning Section Styling */
+.positioning-section {
+    padding: 40px 20px 100px;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.positioning-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.positioning-header h2 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    margin-bottom: 24px;
+    line-height: 1.1;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.positioning-header p {
+    font-size: 1.15rem;
+    color: var(--subtext-color);
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Comparison Table - Premium Sleek Design */
+.comparison-container {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+}
+
+/* Headers */
+.comparison-header-cell {
+    padding: 24px 20px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: lowercase;
+    letter-spacing: -0.01em;
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: 'Outfit', sans-serif;
+}
+
+.comparison-header-cell.label {
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.comparison-header-cell.traditional {
+    background: rgba(255, 77, 77, 0.15);
+    color: #fff;
+}
+
+.comparison-header-cell.commitrix {
+    color: var(--accent-color);
+    background: rgba(132, 255, 0, 0.05);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Rows */
+.comparison-row {
+    display: contents;
+}
+
+.comparison-cell {
+    padding: 14px 24px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.comparison-cell.label {
+    font-weight: 600;
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.01);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.05rem;
+    gap: 12px;
+}
+
+.cell-icon {
+    color: var(--accent-color);
+    opacity: 0.8;
+    flex-shrink: 0;
+}
+
+.comparison-cell.traditional-value {
+    background: rgba(255, 77, 77, 0.05);
+    color: #fff;
+    font-weight: 400;
+}
+
+.comparison-cell.commitrix-value {
+    color: var(--text-color);
+    background: rgba(132, 255, 0, 0.01);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    font-weight: 500;
+}
+
+/* Last row shouldn't have a bottom border */
+.comparison-row:last-child .comparison-cell {
+    border-bottom: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .comparison-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Make section allow overflow for visual cue */
+    .positioning-section {
+        padding: 40px 0 80px 20px;
+        /* Left padding to align with benefits cards */
+        overflow: visible;
+    }
+
+    /* Container extends beyond right edge to hint at scroll */
+    .comparison-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-left: 0;
+        margin-right: -20px;
+        padding-left: 0;
+        padding-right: 0;
+        border-radius: 16px 0 0 16px;
+        border-right: none;
+        background-clip: content-box;
+        /* Background only covers content, not padding */
+    }
+
+    .comparison-grid {
+        grid-template-columns: 130px 150px 170px;
+        min-width: 450px;
+        width: max-content;
+    }
+
+    /* Empty space after table - just page background */
+    .comparison-grid::after {
+        content: '';
+        display: block;
+        width: 30px;
+        grid-column: 1 / -1;
+    }
+
+    .comparison-header-cell {
+        padding: 14px 12px;
+        font-size: 0.9rem;
+        white-space: normal;
+        /* Allow text to wrap if needed */
+        word-wrap: break-word;
+    }
+
+    .comparison-cell {
+        padding: 12px;
+        font-size: 0.82rem;
+        line-height: 1.45;
+        white-space: normal;
+        /* Text wraps */
+        word-wrap: break-word;
+    }
+
+    .comparison-cell.label {
+        font-size: 0.85rem;
+        gap: 8px;
+    }
+
+    .cell-icon {
+        width: 14px;
+        height: 14px;
+    }
+}
